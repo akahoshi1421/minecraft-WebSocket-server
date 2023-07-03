@@ -1,0 +1,15 @@
+[Unit]
+Description=minecraft websocket
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/npm run start
+WorkingDirectory=/home/appdeploy/minecraft-wss
+#KillMode=process
+Restart=always
+User=appdeploy
+Group=appdeploy
+
+[Install]
+WantedBy=multi-user.target

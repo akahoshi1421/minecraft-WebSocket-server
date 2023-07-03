@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/appdeploy/minecraft-wss
+permissions:
+  - object: /
+    owner: appdeploy
+    group: appdeploy
+    mode: 755
+    pattern: "**"
+hooks:
+  AfterInstall:
+    - location: hooks/service.sh
+      timeout: 1000
+      runas: root

@@ -1,0 +1,22 @@
+version: 0.2
+
+env:
+  variables:
+    BINARY_NAME: "minecraft-wss"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - echo "Installing dependencies"
+      - npm install
+  build:
+    commands:
+      - echo "Zipping all files in the repository"
+      - zip -r wss.zip .
+  post_build:
+    commands: # CodeDeploy対応によってこのあたりの処理は変更になる可能性あり
+      - echo "ENV=${ENV}"
+      - aws s3 cp wss.zip s3://minecraft-deploy/${ENV}/

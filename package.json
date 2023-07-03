@@ -1,0 +1,29 @@
+{
+  "name": "mcws_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camp-minecraft/QureoWebsocketServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camp-minecraft/QureoWebsocketServer/issues"
+  },
+  "homepage": "https://github.com/camp-minecraft/QureoWebsocketServer#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.11",
+    "request": "^2.88.2",
+    "typescript": "^5.0.4",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.13",
+    "websocket": "^1.0.34",
+    "ws": "^8.8.1"
+  }
+}
