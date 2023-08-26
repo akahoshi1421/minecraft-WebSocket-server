@@ -9,14 +9,21 @@ wss.on("connection", function (ws) {
 
     ws.on("message", function (rawData) {
         const content = JSON.parse(rawData.toString());
-        // try{
-        //     console.log(content.body.player.position)
-        // }
-        // catch{
-        //     console.log(content);
-        // }
 
-        console.log(content);
+        if("body" in content){
+            const chatMsg = content.body.message;
+
+            try{
+                const blockData = JSON.parse(chatMsg);
+    
+                console.log(blockData.email);
+                console.log(blockData.structure.length);
+            }
+            catch(e){
+                ;
+            }
+        }
+        
     
     });
 
