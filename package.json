@@ -18,12 +18,17 @@
   },
   "homepage": "https://github.com/camp-minecraft/QureoWebsocketServer#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "node-fetch": "^2.6.11",
+    "nodemailer": "^6.9.4",
     "request": "^2.88.2",
-    "typescript": "^5.0.4",
+    "typescript": "^5.2.2",
     "uuid": "^8.3.2",
     "uuidv4": "^6.2.13",
     "websocket": "^1.0.34",
     "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.9"
   }
 }

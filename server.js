@@ -1,22 +1,36 @@
 const ws = require("ws");
 const uuid = require("uuid");
+const stlConvert = require("./stlConverter");
+const sendMail = require("./sendMail");
+
 const wss = new ws.WebSocketServer({
     port: 9999,
 });
+
+const PATTERN = /^(\[\w+\]) (.*)/;
 
 wss.on("connection", function (ws) {
     console.log("接続完了！");
 
     ws.on("message", function (rawData) {
         const content = JSON.parse(rawData.toString());
-        // try{
-        //     console.log(content.body.player.position)
-        // }
-        // catch{
-        //     console.log(content);
-        // }
 
-        console.log(content);
+        if("body" in content){
+            const chatMsg = content.body.message;
+
+            try{
+                const reResult = chatMsg.match(PATTERN);
+                const blockData = JSON.parse(reResult[2]);
+                const stlData = stlConvert.stlConvert(blockData["structure"]);
+                
+                sendMail.sendMail(blockData["email"], stlData);
+
+            }
+            catch(e){
+                console.log(e);
+            }
+        }
+        
     
     });
 
