@@ -1,8 +1,13 @@
 const ws = require("ws");
 const uuid = require("uuid");
+const stlConvert = require("./stlConverter");
+const sendMail = require("./sendMail");
+
 const wss = new ws.WebSocketServer({
     port: 9999,
 });
+
+const PATTERN = /^(\[\w+\]) (.*)/;
 
 wss.on("connection", function (ws) {
     console.log("接続完了！");
@@ -14,13 +19,15 @@ wss.on("connection", function (ws) {
             const chatMsg = content.body.message;
 
             try{
-                const blockData = JSON.parse(chatMsg);
-    
-                console.log(blockData.email);
-                console.log(blockData.structure.length);
+                const reResult = chatMsg.match(PATTERN);
+                const blockData = JSON.parse(reResult[2]);
+                const stlData = stlConvert.stlConvert(blockData["structure"]);
+                
+                sendMail.sendMail(blockData["email"], stlData);
+
             }
             catch(e){
-                ;
+                console.log(e);
             }
         }
         
