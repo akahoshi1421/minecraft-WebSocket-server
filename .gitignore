@@ -16,5 +16,9 @@ node_modules/
 ehthumbs.db
 Thumbs.db
 
+#プロジェクト関連
 .env
 *.py
+
+*.js
+!server.js
