@@ -21,4 +21,3 @@ Thumbs.db
 *.py
 
 *.js
-!server.js
