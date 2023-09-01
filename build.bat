@@ -1,3 +1,3 @@
-tsc sendMail.ts
-tsc stlConverter.ts
-tsc server.ts
+for %%f in (*.ts) do (
+    tsc %%f
+)
