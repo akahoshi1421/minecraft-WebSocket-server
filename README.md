@@ -2,6 +2,8 @@
 
 これはMinecraft(統合版)から送られてきたブロックデータとメールアドレスが入っているJSONデータをSTL形式のファイルに変換し、ユーザが指定したメールアドレスにそのデータを飛ばすためのWebSocketサーバです。
 
+JSONデータは送るクライアント側は[こちら](https://github.com/akahoshi1421/minecraft-3D-data-exporter)
+
 ## 使い方
 
 1. プロジェクトのclone
