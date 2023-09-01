@@ -1,5 +1,6 @@
 #!/bin/sh
 
-tsc sendMail.ts
-tsc stlConverter.ts
-tsc server.ts
+for file in *.ts
+do
+    tsc $file
+done
