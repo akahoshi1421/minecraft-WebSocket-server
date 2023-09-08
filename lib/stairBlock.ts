@@ -18,13 +18,13 @@ class StairBlock extends Block{
     up() {
         switch(this.direction){
             case "x-minus":
-                return UpStair.xMinus(super.x, super.y, super.z);
+                return UpStair.xMinus(this.x, this.y, this.z);
             case "x-plus":
-                return UpStair.xPlus(super.x, super.y, super.z);
+                return UpStair.xPlus(this.x, this.y, this.z);
             case "z-plus":
-                return UpStair.zPlus(super.x, super.y, super.z);
+                return UpStair.zPlus(this.x, this.y, this.z);
             case "z-minus":
-                return UpStair.zMinus(super.x, super.y, super.z);
+                return UpStair.zMinus(this.x, this.y, this.z);
         }
     }
 
@@ -35,13 +35,13 @@ class StairBlock extends Block{
     down() {
         switch(this.direction){
             case "x-minus":
-                return DownStair.xMinus(super.x, super.y, super.z);
+                return DownStair.xMinus(this.x, this.y, this.z);
             case "x-plus":
-                return DownStair.xPlus(super.x, super.y, super.z);
+                return DownStair.xPlus(this.x, this.y, this.z);
             case "z-plus":
-                return DownStair.zPlus(super.x, super.y, super.z);
+                return DownStair.zPlus(this.x, this.y, this.z);
             case "z-minus":
-                return DownStair.zMinus(super.x, super.y, super.z);
+                return DownStair.zMinus(this.x, this.y, this.z);
         }
         
     }   
