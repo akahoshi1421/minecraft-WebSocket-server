@@ -1,3 +1,9 @@
+import { Block } from "./lib/block";
+import { HalfBlock } from "./lib/halfBlock";
+import { StairBlock } from "./lib/stairBlock";
+import { Carpet } from "./lib/carpet";
+import { BLOCK_DATA } from "./lib/blockData/blockData";
+
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]) : string {
     let resultStringStl = "solid result";
@@ -5,108 +11,66 @@ function stlConvert(structuredata: [[[number]]]) : string {
     structuredata.forEach((y, i) => {
         y.forEach((x, j) => {
             x.forEach((z, k) => {
-                if(z !== 0) resultStringStl += stringChanger(j, i, k);
+
+                //空気ブロックではないなら
+                if(z !== 0){
+                    switch(z){
+                        case BLOCK_DATA.NORMAL:
+                            resultStringStl += new Block(i, j, k).block();
+                            break;
+
+                        case BLOCK_DATA.CARPET: // カーペット
+                            resultStringStl += new Carpet(j, i, k).carpet();
+                            break;
+
+                        case BLOCK_DATA.HALF_BLOCK_UP: // ハーフブロック(上)
+                            resultStringStl += new HalfBlock(i, j, k).up();
+                            break;
+
+                        case BLOCK_DATA.HALF_BLOCK_DOWN: // ハーフブロック(下)
+                            resultStringStl += new HalfBlock(i, j, k).down();
+                            break;
+                        
+                        case BLOCK_DATA.STAIR_BLOCK_DOWN_X_PLUS: // 階段ブロック(下、X+)
+                            resultStringStl += new StairBlock(i, j, k, "x-plus").down();
+                            break;
+                        
+                        case BLOCK_DATA.STAIR_BLOCK_DOWN_X_MINUS: // 階段ブロック(下、X-)
+                            resultStringStl += new StairBlock(i, j, k, "x-minus").down();
+                            break;
+
+                        case BLOCK_DATA.STAIR_BLOCK_DOWN_Z_PLUS: // 階段ブロック(下、Z+)
+                            resultStringStl += new StairBlock(i, j, k, "z-plus").down();
+                            break;
+
+                        case BLOCK_DATA.STAIR_BLOCK_DOWN_Z_MINUS: // 階段ブロック(下、Z-)
+                            resultStringStl += new StairBlock(i, j, k, "z-minus").down();
+                            break;
+
+                        case BLOCK_DATA.STAIR_BLOCK_UP_X_PLUS: // 階段ブロック(上、X+)
+                            resultStringStl += new StairBlock(i, j, k, "x-plus").up();
+                            break;
+                        
+                        case BLOCK_DATA.STAIR_BLOCK_UP_X_MINUS: // 階段ブロック(上、X-)
+                            resultStringStl += new StairBlock(i, j, k, "x-minus").up();
+                            break;
+
+                        case BLOCK_DATA.STAIR_BLOCK_UP_Z_PLUS: // 階段ブロック(上、Z+)
+                            resultStringStl += new StairBlock(i, j, k, "z-plus").up();
+                            break;
+
+                        case BLOCK_DATA.STAIR_BLOCK_UP_Z_MINUS: // 階段ブロック(上、Z-)
+                            resultStringStl += new StairBlock(i, j, k, "z-minus").up();
+                            break;
+
+                    }
+
+                }
             });
         });
     });
     
     return resultStringStl + "endsolid\n";
 } 
-
-function stringChanger(x: number, y: number, z: number) : string{
-    return `\n\
-        facet normal  1.000000e+01  0.000000e+00  0.000000e+01\n\
-            outer loop\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        facet normal  1.000000e+01  0.000000e+00  0.000000e+01\n\
-            outer loop\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        ​   \n\
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        ​   \n\
-        facet normal  0.000000e+01  1.000000e+01  0.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        facet normal  0.000000e+01  1.000000e+01  0.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        ​   \n\
-        facet normal  0.000000e+01  -1.000000e+01  0.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        facet normal  0.000000e+01  -1.000000e+01  0.000000e+01\n\
-            outer loop\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        ​   \n\
-        facet normal  0.000000e+00  0.000000e+00  1.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        facet normal  0.000000e+00  0.000000e+00  1.000000e+01\n\
-            outer loop\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z+1}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z+1}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        ​   \n\
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01\n\
-            outer loop\n\
-                vertex  ${x}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01\n\
-            outer loop\n\
-                vertex  ${x+1}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x+1}.000000e+01  ${y}.000000e+01  ${z}.000000e+01\n\
-                vertex  ${x}.000000e+01  ${y+1}.000000e+01  ${z}.000000e+01\n\
-            endloop\n\
-        endfacet\n\
-        `;
-}
-
-
 
 export {stlConvert};
