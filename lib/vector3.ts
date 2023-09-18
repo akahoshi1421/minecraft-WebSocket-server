@@ -1,7 +1,7 @@
 class Vector3{
-    public x: number = NaN;
-    public y: number = NaN;
-    public z: number = NaN;
+    protected readonly x: number = NaN;
+    protected readonly y: number = NaN;
+    protected readonly z: number = NaN;
 
 
     constructor(x: number, y: number, z: number){
