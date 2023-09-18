@@ -135,3 +135,5 @@ class ZeroNormal extends Vector3{
     `
   }
 }
+
+export { ZeroNormal }
