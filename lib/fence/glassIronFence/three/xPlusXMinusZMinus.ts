@@ -519,3 +519,5 @@ class ThreeXPlusXMinusZMinus extends Vector3{
         `
     }
 }
+
+export { ThreeXPlusXMinusZMinus }
