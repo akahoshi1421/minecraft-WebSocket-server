@@ -17,8 +17,7 @@ $ cd minecraft-WebSocket-server
 
 ```bash
 $ npm i
-$ ./build.bat #windows
-$ bash build.sh #linux
+$ tsc
 ```
 
 3. .envファイルの記述
