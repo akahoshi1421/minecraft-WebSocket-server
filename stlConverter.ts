@@ -4,6 +4,7 @@ import { StairBlock } from "./lib/stairBlock";
 import { Carpet } from "./lib/carpet";
 import { BLOCK_DATA } from "./lib/blockData/blockData";
 import { callSnow } from "./util/callSnow";
+import { callWoodFence } from "./util/callWoodFence";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -65,6 +66,9 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.SNOW: // 雪ブロック
               resultStringStl += callSnow(z, i, j, k);
+
+            case BLOCK_DATA.WOOD_FENCE: // 木のフェンス
+              resultStringStl += callWoodFence(z, i, j, k);
           }
         }
       });
