@@ -3,6 +3,7 @@ import { HalfBlock } from "./lib/halfBlock";
 import { StairBlock } from "./lib/stairBlock";
 import { Carpet } from "./lib/carpet";
 import { BLOCK_DATA } from "./lib/blockData/blockData";
+import { callSnow } from "./util/callSnow";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -61,6 +62,9 @@ function stlConvert(structuredata: [[[number]]]): string {
             case BLOCK_DATA.STAIR_BLOCK_UP_Z_MINUS: // 階段ブロック(上、Z-)
               resultStringStl += new StairBlock(j, i, k, "z-minus").up();
               break;
+
+            case BLOCK_DATA.SNOW: // 雪ブロック
+              resultStringStl += callSnow(z, i, j, k);
           }
         }
       });
