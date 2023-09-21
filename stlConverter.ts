@@ -5,6 +5,7 @@ import { Carpet } from "./lib/carpet";
 import { BLOCK_DATA } from "./lib/blockData/blockData";
 import { callSnow } from "./util/callSnow";
 import { callWoodFence } from "./util/callWoodFence";
+import { callGlassIronFence } from "./util/callGlassIronFence";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -66,9 +67,17 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.SNOW: // 雪ブロック
               resultStringStl += callSnow(z, i, j, k);
+              break;
 
             case BLOCK_DATA.WOOD_FENCE: // 木のフェンス
               resultStringStl += callWoodFence(z, i, j, k);
+              break;
+
+            case BLOCK_DATA.GLASS_IRON_FENCE: // 板ガラスと鉄格子
+              resultStringStl += callGlassIronFence(z, i, j, k);
+              break;
+
+              
           }
         }
       });
