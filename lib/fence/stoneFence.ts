@@ -23,12 +23,12 @@ class StoneFence extends Block{
     public readonly three = {}
     public readonly four = {}
 
-    private xPlusHeigher: boolean = false;
-    private xMinusHeigher: boolean = false;
-    private zPlusHeigher: boolean = false;
-    private zMinusHeigher: boolean = false;
-    private centerHeigher: boolean = false;
-    private centerTaller: boolean = false;
+    private readonly xPlusHeigher: boolean = false;
+    private readonly xMinusHeigher: boolean = false;
+    private readonly zPlusHeigher: boolean = false;
+    private readonly zMinusHeigher: boolean = false;
+    private readonly centerHeigher: boolean = false;
+    private readonly centerTaller: boolean = false;
 
     constructor(x: number, y: number, z: number, xPlusHeigher: boolean, xMinusHeigher: boolean, zPlusHeigher: boolean, zMinusHeigher: boolean, centerHeigher: boolean, centerTaller: boolean){
         super(x, y, z);
