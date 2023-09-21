@@ -41,39 +41,105 @@ class StoneFence extends Block{
 
 
         this.zero = {
-            normal: new ZeroNormal(this.x, this.y, this.z).normal
+            normal: this.zeroNormal
         }
         
         this.one = {
-            xMinus: new OneXMinus(this.x, this.y, this.z, this.xMinusHeigher).xMinus,
-            xPlus: new OneXPlus(this.x, this.y, this.z, this.xPlusHeigher).xPlus,
-            zMinus: new OneZMinus(this.x, this.y, this.z, this.zMinusHeigher).zMinus,
-            zPlus: new OneZPlus(this.x, this.y, this.z, this.zPlusHeigher).zPlus
+            xMinus: this.oneXMinus,
+            xPlus: this.oneXPlus,
+            zMinus: this.oneZMinus,
+            zPlus: this.oneZPlus
         }
 
         this.two = {
-            xMinusZMinus: new TwoXMinusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zMinusHeigher).xMinusZMinus,
-            xMinusZPlus: new TwoXMinusZPlus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher).xMinusZPlus,
-            xPlusXMinus: new TwoXPlusXMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.centerHeigher, this.centerTaller).xPlusXMinus,
-            xPlusZMinus: new TwoXPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zMinusHeigher).xPlusZMinus,
-            xPlusZPlus: new TwoXPlusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher).xPlusZPlus,
-            zPlusZMinus: new TwoZPlusZMinus(this.x, this.y, this.z, this.zPlusHeigher, this.zMinusHeigher, this.centerHeigher, this.centerTaller).zPlusZMinus
+            xMinusZMinus: this.twoXMinusZMinus,
+            xMinusZPlus: this.twoXMinusZPlus,
+            xPlusXMinus: this.twoXPlusXMinus,
+            xPlusZMinus: this.twoXPlusZMinus,
+            xPlusZPlus: this.twoXPlusZPlus,
+            zPlusZMinus: this.twoZPlusZMinus 
         }
 
         this.three = {
-            xMinusZPlusZMinus: new ThreeXMinusZPlusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xMinusZPlusZMinus,
-            xPlusXMinusZMinus: new ThreeXPlusXMinusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zMinusHeigher).xPlusXMinusZMinus,
-            xPlusXMinusZPlus: new ThreeXPlusXMinusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher).xPlusXMinusZPlus,
-            xPlusZPlusZMinus: new ThreeXPlusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusZPlusZMinus
+            xMinusZPlusZMinus: this.threeXMinusZPlusZMinus,
+            xPlusXMinusZMinus: this.threeXPlusXMinusZMinus,
+            xPlusXMinusZPlus: this.threeXPlusXMinusZPlus,
+            xPlusZPlusZMinus: this.threeXPlusZPlusZMinus
         }
 
         this.four = {
-            xPlusXMinusZPlusZMinus: new FourXPlusXMinusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusXMinusZPlusZMinus
+            xPlusXMinusZPlusZMinus: this.fourXPlusXMinusZPlusZMinus
         }
     }
 
+    // 0個
+    private zeroNormal(){
+        return new ZeroNormal(this.x, this.y, this.z).normal();
+    }
 
+    // 1個
+    private oneXMinus(){
+        return new OneXMinus(this.x, this.y, this.z, this.xMinusHeigher).xMinus();
+    }
 
+    private oneXPlus(){
+        return new OneXPlus(this.x, this.y, this.z, this.xPlusHeigher).xPlus();
+    }
+
+    private oneZMinus(){
+        return new OneZMinus(this.x, this.y, this.z, this.zMinusHeigher).zMinus();
+    }
+
+    private oneZPlus(){
+        return new OneZPlus(this.x, this.y, this.z, this.zPlusHeigher).zPlus();
+    }
+
+    // 2個
+    private twoXMinusZMinus(){
+        return new TwoXMinusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zMinusHeigher).xMinusZMinus();
+    }
+
+    private twoXMinusZPlus(){
+        return new TwoXMinusZPlus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher).xMinusZPlus();
+    }
+
+    private twoXPlusXMinus(){
+        return new TwoXPlusXMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.centerHeigher, this.centerTaller).xPlusXMinus();
+    }
+
+    private twoXPlusZMinus(){
+        return new TwoXPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zMinusHeigher).xPlusZMinus();
+    }
+
+    private twoXPlusZPlus(){
+        return new TwoXPlusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher).xPlusZPlus();
+    }
+
+    private twoZPlusZMinus(){
+        return new TwoZPlusZMinus(this.x, this.y, this.z, this.zPlusHeigher, this.zMinusHeigher, this.centerHeigher, this.centerTaller).zPlusZMinus();
+    }
+
+    // 3個
+    private threeXMinusZPlusZMinus(){
+        return new ThreeXMinusZPlusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xMinusZPlusZMinus();
+    }
+
+    private threeXPlusXMinusZMinus(){
+        return new ThreeXPlusXMinusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zMinusHeigher).xPlusXMinusZMinus();
+    }
+
+    private threeXPlusXMinusZPlus(){
+        return new ThreeXPlusXMinusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher).xPlusXMinusZPlus();
+    }
+
+    private threeXPlusZPlusZMinus(){
+        return new ThreeXPlusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusZPlusZMinus();
+    }
+
+    // 4個
+    private fourXPlusXMinusZPlusZMinus(){
+        return new FourXPlusXMinusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusXMinusZPlusZMinus();
+    }
 }
 
 export { StoneFence }
