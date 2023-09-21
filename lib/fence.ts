@@ -8,12 +8,12 @@ class Fence extends Block{
     public readonly glassIronFence: GlassIronFence;
     public readonly stoneFence: StoneFence;
 
-    private xPlusHeigher: boolean = false;
-    private xMinusHeigher: boolean = false;
-    private zPlusHeigher: boolean = false;
-    private zMinusHeigher: boolean = false;
-    private centerHeigher: boolean = false;
-    private centerTaller: boolean = false;
+    private readonly xPlusHeigher: boolean = false;
+    private readonly xMinusHeigher: boolean = false;
+    private readonly zPlusHeigher: boolean = false;
+    private readonly zMinusHeigher: boolean = false;
+    private readonly centerHeigher: boolean = false;
+    private readonly centerTaller: boolean = false;
 
     constructor(x: number, y: number, z: number, xPlusHeigher: boolean = false, xMinusHeigher: boolean = false, zPlusHeigher: boolean = false, zMinusHeigher: boolean = false, centerHeigher: boolean = false, centerTaller: boolean = false){
         super(x, y, z);
