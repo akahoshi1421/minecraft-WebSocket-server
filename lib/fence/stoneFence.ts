@@ -10,10 +10,10 @@ import { ThreeXPlusXMinusZPlus } from "./stoneFence/three/xPlusXMinusZPlus";
 import { ThreeXPlusZPlusZMinus } from "./stoneFence/three/xPlusZPlusZMinus";
 import { TwoXMinusZMinus } from "./stoneFence/two/xMinusZMinus";
 import { TwoXMinusZPlus } from "./stoneFence/two/xMinusZPlus";
-// import { TwoXPlusXMinus } from "./stoneFence/two/xPlusXMinus";
+import { TwoXPlusXMinus } from "./stoneFence/two/xPlusXMinus";
 import { TwoXPlusZMinus } from "./stoneFence/two/xPlusZMinus";
 import { TwoXPlusZPlus } from "./stoneFence/two/xPlusZPlus";
-// import { TwoZPlusZMinus } from "./stoneFence/two/zPlusZMinus";
+import { TwoZPlusZMinus } from "./stoneFence/two/zPlusZMinus";
 import { ZeroNormal } from "./stoneFence/zero/normal";
 
 class StoneFence extends Block{
@@ -28,15 +28,16 @@ class StoneFence extends Block{
     private zPlusHeigher: boolean = false;
     private zMinusHeigher: boolean = false;
     private centerHeigher: boolean = false;
+    private centerTaller: boolean = false;
 
-    constructor(x: number, y: number, z: number, xPlusHeigher: boolean, xMinusHeigher: boolean, zPlusHeigher: boolean, zMinusHeigher: boolean, centerHeigher: boolean){
+    constructor(x: number, y: number, z: number, xPlusHeigher: boolean, xMinusHeigher: boolean, zPlusHeigher: boolean, zMinusHeigher: boolean, centerHeigher: boolean, centerTaller: boolean){
         super(x, y, z);
         this.xPlusHeigher = xPlusHeigher;
         this.xMinusHeigher = xMinusHeigher;
         this.zPlusHeigher = zPlusHeigher;
         this.zMinusHeigher = zMinusHeigher;
         this.centerHeigher = centerHeigher;
-
+        this.centerTaller = centerTaller;
 
 
         this.zero = {
@@ -53,10 +54,10 @@ class StoneFence extends Block{
         this.two = {
             xMinusZMinus: new TwoXMinusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zMinusHeigher).xMinusZMinus,
             xMinusZPlus: new TwoXMinusZPlus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher).xMinusZPlus,
-            // xPlusXMinus: new TwoXPlusXMinus(this.x, this.y, this.z).xPlusXMinus,
+            xPlusXMinus: new TwoXPlusXMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.centerHeigher, this.centerTaller).xPlusXMinus,
             xPlusZMinus: new TwoXPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zMinusHeigher).xPlusZMinus,
             xPlusZPlus: new TwoXPlusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher).xPlusZPlus,
-            // zPlusZMinus: new TwoZPlusZMinus(this.x, this.y, this.z).zPlusZMinus
+            zPlusZMinus: new TwoZPlusZMinus(this.x, this.y, this.z, this.zPlusHeigher, this.zMinusHeigher, this.centerHeigher, this.centerTaller).zPlusZMinus
         }
 
         this.three = {
