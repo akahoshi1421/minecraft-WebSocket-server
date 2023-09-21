@@ -395,3 +395,5 @@ class TwoXPlusZPlus extends Vector3{
         `
     }
 }
+
+export { TwoXPlusZPlus }
