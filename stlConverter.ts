@@ -7,6 +7,9 @@ import { callSnow } from "./util/callSnow";
 import { callWoodFence } from "./util/callWoodFence";
 import { callGlassIronFence } from "./util/callGlassIronFence";
 import { callStoneFence } from "./util/callStoneFence";
+import { EndPortal } from "./lib/endportal";
+import { PressurePlate } from "./lib/pressurePlate";
+import { EnchantingTable } from "./lib/enchantingTable";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -80,6 +83,18 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.STONE_FENCE: // 石フェンス
               resultStringStl += callStoneFence(z, i, j, k);
+              break;
+
+            case BLOCK_DATA.END_PORTAL: // エンドポータル
+              resultStringStl += new EndPortal(i, j, k).endPortal();
+              break;
+            
+            case BLOCK_DATA.PRESSURE_PLATE: // 感圧版
+              resultStringStl += new PressurePlate(i, j, k).pressurePlate();
+              break;
+
+            case BLOCK_DATA.ENCHANTING_TABLE: // エンチャントテーブル
+              resultStringStl += new EnchantingTable(i, j, k).enchantingTable();
               break;
           }
         }
