@@ -17,11 +17,32 @@ import { TwoZPlusZMinus } from "./stoneFence/two/zPlusZMinus";
 import { ZeroNormal } from "./stoneFence/zero/normal";
 
 class StoneFence extends Block{
-    public readonly zero = {}
-    public readonly one = {}
-    public readonly two = {}
-    public readonly three = {}
-    public readonly four = {}
+    public readonly zero = {
+        normal: this.zeroNormal
+    }
+    public readonly one = {
+        xMinus: this.oneXMinus,
+        xPlus: this.oneXPlus,
+        zMinus: this.oneZMinus,
+        zPlus: this.oneZPlus
+    }
+    public readonly two = {
+        xMinusZMinus: this.twoXMinusZMinus,
+        xMinusZPlus: this.twoXMinusZPlus,
+        xPlusXMinus: this.twoXPlusXMinus,
+        xPlusZMinus: this.twoXPlusZMinus,
+        xPlusZPlus: this.twoXPlusZPlus,
+        zPlusZMinus: this.twoZPlusZMinus 
+    }
+    public readonly three = {
+        xMinusZPlusZMinus: this.threeXMinusZPlusZMinus,
+        xPlusXMinusZMinus: this.threeXPlusXMinusZMinus,
+        xPlusXMinusZPlus: this.threeXPlusXMinusZPlus,
+        xPlusZPlusZMinus: this.threeXPlusZPlusZMinus
+    }
+    public readonly four = {
+        xPlusXMinusZPlusZMinus: this.fourXPlusXMinusZPlusZMinus
+    }
 
     private readonly xPlusHeigher: boolean = false;
     private readonly xMinusHeigher: boolean = false;
@@ -38,38 +59,6 @@ class StoneFence extends Block{
         this.zMinusHeigher = zMinusHeigher;
         this.centerHeigher = centerHeigher;
         this.centerTaller = centerTaller;
-
-
-        this.zero = {
-            normal: this.zeroNormal
-        }
-        
-        this.one = {
-            xMinus: this.oneXMinus,
-            xPlus: this.oneXPlus,
-            zMinus: this.oneZMinus,
-            zPlus: this.oneZPlus
-        }
-
-        this.two = {
-            xMinusZMinus: this.twoXMinusZMinus,
-            xMinusZPlus: this.twoXMinusZPlus,
-            xPlusXMinus: this.twoXPlusXMinus,
-            xPlusZMinus: this.twoXPlusZMinus,
-            xPlusZPlus: this.twoXPlusZPlus,
-            zPlusZMinus: this.twoZPlusZMinus 
-        }
-
-        this.three = {
-            xMinusZPlusZMinus: this.threeXMinusZPlusZMinus,
-            xPlusXMinusZMinus: this.threeXPlusXMinusZMinus,
-            xPlusXMinusZPlus: this.threeXPlusXMinusZPlus,
-            xPlusZPlusZMinus: this.threeXPlusZPlusZMinus
-        }
-
-        this.four = {
-            xPlusXMinusZPlusZMinus: this.fourXPlusXMinusZPlusZMinus
-        }
     }
 
     // 0個
