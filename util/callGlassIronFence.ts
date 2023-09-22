@@ -83,7 +83,7 @@ const callGlassIronFence = (id: number, x: number, y: number, z: number) => {
 };
 
 /**
- * 少数の末尾の数字を返してくれる関数
+ * 小数点第二位の値を返してくれる関数
  * @param id id
  * @param plusNum 足される値
  * @returns 
