@@ -70,31 +70,31 @@ function stlConvert(structuredata: [[[number]]]): string {
               break;
 
             case BLOCK_DATA.SNOW: // 雪ブロック
-              resultStringStl += callSnow(z, i, j, k);
+              resultStringStl += callSnow(z, j, i, k);
               break;
 
             case BLOCK_DATA.WOOD_FENCE: // 木のフェンス
-              resultStringStl += callWoodFence(z, i, j, k);
+              resultStringStl += callWoodFence(z, j, i, k);
               break;
 
             case BLOCK_DATA.GLASS_IRON_FENCE: // 板ガラスと鉄格子
-              resultStringStl += callGlassIronFence(z, i, j, k);
+              resultStringStl += callGlassIronFence(z, j, i, k);
               break;
 
             case BLOCK_DATA.STONE_FENCE: // 石フェンス
-              resultStringStl += callStoneFence(z, i, j, k);
+              resultStringStl += callStoneFence(z, j, i, k);
               break;
 
             case BLOCK_DATA.END_PORTAL: // エンドポータル
-              resultStringStl += new EndPortal(i, j, k).endPortal();
+              resultStringStl += new EndPortal(j, i, k).endPortal();
               break;
             
             case BLOCK_DATA.PRESSURE_PLATE: // 感圧版
-              resultStringStl += new PressurePlate(i, j, k).pressurePlate();
+              resultStringStl += new PressurePlate(j, i, k).pressurePlate();
               break;
 
             case BLOCK_DATA.ENCHANTING_TABLE: // エンチャントテーブル
-              resultStringStl += new EnchantingTable(i, j, k).enchantingTable();
+              resultStringStl += new EnchantingTable(j, i, k).enchantingTable();
               break;
           }
         }
