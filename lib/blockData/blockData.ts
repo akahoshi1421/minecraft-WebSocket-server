@@ -2,8 +2,7 @@ const BLOCK_DATA = {
     NORMAL: 1,
     CARPET: 2,
 
-    HALF_BLOCK_UP: 3.0,
-    HALF_BLOCK_DOWN: 3.1,
+    HALF_BLOCK: 3.0,
 
     STAIR_BLOCK_DOWN_X_PLUS: 4.0,
     STAIR_BLOCK_DOWN_X_MINUS: 4.1,

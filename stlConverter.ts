@@ -10,6 +10,7 @@ import { callStoneFence } from "./util/callStoneFence";
 import { EndPortal } from "./lib/endportal";
 import { PressurePlate } from "./lib/pressurePlate";
 import { EnchantingTable } from "./lib/enchantingTable";
+import { callHalfBlock } from "./util/callHalfBlock";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -29,12 +30,8 @@ function stlConvert(structuredata: [[[number]]]): string {
               resultStringStl += new Carpet(j, i, k).carpet();
               break;
 
-            case BLOCK_DATA.HALF_BLOCK_UP: // ハーフブロック(上)
-              resultStringStl += new HalfBlock(j, i, k).up();
-              break;
-
-            case BLOCK_DATA.HALF_BLOCK_DOWN: // ハーフブロック(下)
-              resultStringStl += new HalfBlock(j, i, k).down();
+            case BLOCK_DATA.HALF_BLOCK: // ハーフブロック
+              resultStringStl += callHalfBlock(z, j, i, k);
               break;
 
             case BLOCK_DATA.STAIR_BLOCK_DOWN_X_PLUS: // 階段ブロック(下、X+)
