@@ -95,7 +95,9 @@ class HalfBlock extends Block{
                 vertex  ${this.x + 1}.000000e+01  ${this.y}.500000e+01  ${this.z}.000000e+01
                 vertex  ${this.x}.000000e+01  ${this.y + 1}.000000e+01  ${this.z}.000000e+01       
             endloop
-        endfacet`   
+        endfacet
+        
+        `   
     }
 
     down() {
@@ -188,7 +190,9 @@ class HalfBlock extends Block{
                 vertex  ${this.x + 1}.000000e+01  ${this.y}.000000e+01  ${this.z}.000000e+01
                 vertex  ${this.x}.000000e+01  ${this.y}.500000e+01  ${this.z}.000000e+01       
             endloop
-        endfacet`
+        endfacet
+        
+        `
     }   
 }
 
