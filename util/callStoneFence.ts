@@ -7,9 +7,6 @@ const callStoneFence = (id: number, x: number, y: number, z: number) => {
     const idNum1 = Math.floor(id * 10) / 10;
     const tailNumbers = getTailNumberes(id);
 
-    // 異常終了
-    if(!tailNumbers) return "";
-
     const tfLists = tailNumbers.split("").map(num => {
         return  num === "1" ? false : true;
     });
@@ -46,7 +43,7 @@ const callStoneFence = (id: number, x: number, y: number, z: number) => {
                 return new Fence(x, y, z, false, tfLists[0], tfLists[1]).stoneFence.two.xMinusZPlus();
             }
             else if(directionId2 === 3){
-                return new Fence(x, y, z, tfLists[0], tfLists[1], false, false, tfLists[2], tfLists[3]);
+                return new Fence(x, y, z, tfLists[0], tfLists[1], false, false, tfLists[2], tfLists[3]).stoneFence.two.xPlusXMinus();
             }
             else if(directionId2 === 4){
                 return new Fence(x, y, z, tfLists[0], false, false, tfLists[1]).stoneFence.two.xPlusZMinus();
@@ -90,7 +87,7 @@ const callStoneFence = (id: number, x: number, y: number, z: number) => {
  * @returns 
  */
 const returnId = (id: number, plusNum: number) => {
-    return Math.round((id - (BLOCK_DATA.GLASS_IRON_FENCE + plusNum)) * 100);
+    return Math.round((id - (BLOCK_DATA.STONE_FENCE + plusNum)) * 100);
 }
 
 /**
@@ -104,7 +101,7 @@ const getTailNumberes = (id: number) => {
     const result = id.toString().match(pattern);
 
     if(result) return result[1];
-    else return null;
+    else return "";
 }
 
 export { callStoneFence }

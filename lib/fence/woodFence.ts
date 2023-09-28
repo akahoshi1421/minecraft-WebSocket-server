@@ -18,30 +18,30 @@ import { ZeroNormal } from "./woodFence/zero/normal";
 
 class WoodFence extends Block{
     public readonly zero = {
-        normal: this.zeroNormal
+        normal: this.zeroNormal.bind(this)
     }
     public readonly one = {
-        xMinus: this.oneXMinus,
-        xPlus: this.oneXPlus,
-        zMinus: this.oneZMinus,
-        zPlus: this.oneZPlus
+        xMinus: this.oneXMinus.bind(this),
+        xPlus: this.oneXPlus.bind(this),
+        zMinus: this.oneZMinus.bind(this),
+        zPlus: this.oneZPlus.bind(this)
     }
     public readonly two = {
-        xMinusZMinus: this.twoXMinusZMinus,
-        xMinusZPlus: this.twoXMinusZPlus,
-        xPlusXMinus: this.twoXPlusXMinus,
-        xPlusZMinus: this.twoXPlusZMinus,
-        xPlusZPlus: this.twoXPlusZPlus,
-        zPlusZMinus: this.twoZPlusZMinus 
+        xMinusZMinus: this.twoXMinusZMinus.bind(this),
+        xMinusZPlus: this.twoXMinusZPlus.bind(this),
+        xPlusXMinus: this.twoXPlusXMinus.bind(this),
+        xPlusZMinus: this.twoXPlusZMinus.bind(this),
+        xPlusZPlus: this.twoXPlusZPlus.bind(this),
+        zPlusZMinus: this.twoZPlusZMinus.bind(this) 
     }
     public readonly three = {
-        xMinusZPlusZMinus: this.threeXMinusZPlusZMinus,
-        xPlusXMinusZMinus: this.threeXPlusXMinusZMinus,
-        xPlusXMinusZPlus: this.threeXPlusXMinusZPlus,
-        xPlusZPlusZMinus: this.threeXPlusZPlusZMinus 
+        xMinusZPlusZMinus: this.threeXMinusZPlusZMinus.bind(this),
+        xPlusXMinusZMinus: this.threeXPlusXMinusZMinus.bind(this),
+        xPlusXMinusZPlus: this.threeXPlusXMinusZPlus.bind(this),
+        xPlusZPlusZMinus: this.threeXPlusZPlusZMinus.bind(this) 
     }
     public readonly four = {
-        xPlusXMinusZPlusZMinus: this.fourXPlusXMinusZPlusZMinus
+        xPlusXMinusZPlusZMinus: this.fourXPlusXMinusZPlusZMinus.bind(this)
     }
 
 

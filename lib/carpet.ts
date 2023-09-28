@@ -131,7 +131,8 @@ class Carpet extends Block{
                 vertex  ${this.x}.000000e+01  ${this.y}.062500e+01  ${this.z}.000000e+01
             endloop
         endfacet
-    `
+    
+        `
     } 
 }
 

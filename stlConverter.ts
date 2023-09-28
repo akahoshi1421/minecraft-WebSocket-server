@@ -10,6 +10,8 @@ import { callStoneFence } from "./util/callStoneFence";
 import { EndPortal } from "./lib/endportal";
 import { PressurePlate } from "./lib/pressurePlate";
 import { EnchantingTable } from "./lib/enchantingTable";
+import { callHalfBlock } from "./util/callHalfBlock";
+import { callStairBlock } from "./util/callStairBlock";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -20,7 +22,7 @@ function stlConvert(structuredata: [[[number]]]): string {
       x.forEach((z, k) => {
         //空気ブロックではないなら
         if (z !== 0) {
-          switch (z) {
+          switch (Math.floor(z)) {
             case BLOCK_DATA.NORMAL:
               resultStringStl += new Block(j, i, k).block();
               break;
@@ -29,72 +31,43 @@ function stlConvert(structuredata: [[[number]]]): string {
               resultStringStl += new Carpet(j, i, k).carpet();
               break;
 
-            case BLOCK_DATA.HALF_BLOCK_UP: // ハーフブロック(上)
-              resultStringStl += new HalfBlock(j, i, k).up();
+            case BLOCK_DATA.HALF_BLOCK: // ハーフブロック
+              resultStringStl += callHalfBlock(z, j, i, k);
               break;
 
-            case BLOCK_DATA.HALF_BLOCK_DOWN: // ハーフブロック(下)
-              resultStringStl += new HalfBlock(j, i, k).down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_X_PLUS: // 階段ブロック(下、X+)
-              resultStringStl += new StairBlock(j, i, k, "x-plus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_X_MINUS: // 階段ブロック(下、X-)
-              resultStringStl += new StairBlock(j, i, k, "x-minus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_Z_PLUS: // 階段ブロック(下、Z+)
-              resultStringStl += new StairBlock(j, i, k, "z-plus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_Z_MINUS: // 階段ブロック(下、Z-)
-              resultStringStl += new StairBlock(j, i, k, "z-minus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_X_PLUS: // 階段ブロック(上、X+)
-              resultStringStl += new StairBlock(j, i, k, "x-plus").up();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_X_MINUS: // 階段ブロック(上、X-)
-              resultStringStl += new StairBlock(j, i, k, "x-minus").up();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_Z_PLUS: // 階段ブロック(上、Z+)
-              resultStringStl += new StairBlock(j, i, k, "z-plus").up();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_Z_MINUS: // 階段ブロック(上、Z-)
-              resultStringStl += new StairBlock(j, i, k, "z-minus").up();
+            case BLOCK_DATA.STAIR_BLOCK: // 階段ブロック
+              if(z === 4.0 || z === 4.4) resultStringStl += callStairBlock(z, j, i, k, "x-plus");
+              else if(z === 4.1 || z === 4.5) resultStringStl += callStairBlock(z, j, i, k, "x-minus");
+              else if(z === 4.2 || z === 4.6) resultStringStl += callStairBlock(z, j, i, k, "z-plus");
+              else if(z === 4.3 || z === 4.7) resultStringStl += callStairBlock(z, j, i, k, "z-minus");
               break;
 
             case BLOCK_DATA.SNOW: // 雪ブロック
-              resultStringStl += callSnow(z, i, j, k);
+              resultStringStl += callSnow(z, j, i, k);
               break;
 
             case BLOCK_DATA.WOOD_FENCE: // 木のフェンス
-              resultStringStl += callWoodFence(z, i, j, k);
+              resultStringStl += callWoodFence(z, j, i, k);
               break;
 
             case BLOCK_DATA.GLASS_IRON_FENCE: // 板ガラスと鉄格子
-              resultStringStl += callGlassIronFence(z, i, j, k);
+              resultStringStl += callGlassIronFence(z, j, i, k);
               break;
 
             case BLOCK_DATA.STONE_FENCE: // 石フェンス
-              resultStringStl += callStoneFence(z, i, j, k);
+              resultStringStl += callStoneFence(z, j, i, k);
               break;
 
             case BLOCK_DATA.END_PORTAL: // エンドポータル
-              resultStringStl += new EndPortal(i, j, k).endPortal();
+              resultStringStl += new EndPortal(j, i, k).endPortal();
               break;
             
             case BLOCK_DATA.PRESSURE_PLATE: // 感圧版
-              resultStringStl += new PressurePlate(i, j, k).pressurePlate();
+              resultStringStl += new PressurePlate(j, i, k).pressurePlate();
               break;
 
             case BLOCK_DATA.ENCHANTING_TABLE: // エンチャントテーブル
-              resultStringStl += new EnchantingTable(i, j, k).enchantingTable();
+              resultStringStl += new EnchantingTable(j, i, k).enchantingTable();
               break;
           }
         }
