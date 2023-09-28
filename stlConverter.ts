@@ -11,6 +11,7 @@ import { EndPortal } from "./lib/endportal";
 import { PressurePlate } from "./lib/pressurePlate";
 import { EnchantingTable } from "./lib/enchantingTable";
 import { callHalfBlock } from "./util/callHalfBlock";
+import { callStairBlock } from "./util/callStairBlock";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -21,7 +22,7 @@ function stlConvert(structuredata: [[[number]]]): string {
       x.forEach((z, k) => {
         //空気ブロックではないなら
         if (z !== 0) {
-          switch (z) {
+          switch (Math.floor(z)) {
             case BLOCK_DATA.NORMAL:
               resultStringStl += new Block(j, i, k).block();
               break;
@@ -34,36 +35,11 @@ function stlConvert(structuredata: [[[number]]]): string {
               resultStringStl += callHalfBlock(z, j, i, k);
               break;
 
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_X_PLUS: // 階段ブロック(下、X+)
-              resultStringStl += new StairBlock(j, i, k, "x-plus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_X_MINUS: // 階段ブロック(下、X-)
-              resultStringStl += new StairBlock(j, i, k, "x-minus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_Z_PLUS: // 階段ブロック(下、Z+)
-              resultStringStl += new StairBlock(j, i, k, "z-plus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_DOWN_Z_MINUS: // 階段ブロック(下、Z-)
-              resultStringStl += new StairBlock(j, i, k, "z-minus").down();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_X_PLUS: // 階段ブロック(上、X+)
-              resultStringStl += new StairBlock(j, i, k, "x-plus").up();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_X_MINUS: // 階段ブロック(上、X-)
-              resultStringStl += new StairBlock(j, i, k, "x-minus").up();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_Z_PLUS: // 階段ブロック(上、Z+)
-              resultStringStl += new StairBlock(j, i, k, "z-plus").up();
-              break;
-
-            case BLOCK_DATA.STAIR_BLOCK_UP_Z_MINUS: // 階段ブロック(上、Z-)
-              resultStringStl += new StairBlock(j, i, k, "z-minus").up();
+            case BLOCK_DATA.STAIR_BLOCK: // 階段ブロック
+              if(z === 4.0 || z === 4.4) resultStringStl += callStairBlock(z, j, i, k, "x-plus");
+              else if(z === 4.1 || z === 4.5) resultStringStl += callStairBlock(z, j, i, k, "x-minus");
+              else if(z === 4.2 || z === 4.6) resultStringStl += callStairBlock(z, j, i, k, "z-plus");
+              else if(z === 4.3 || z === 4.7) resultStringStl += callStairBlock(z, j, i, k, "z-minus");
               break;
 
             case BLOCK_DATA.SNOW: // 雪ブロック
