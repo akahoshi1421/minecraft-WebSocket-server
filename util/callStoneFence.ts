@@ -43,7 +43,7 @@ const callStoneFence = (id: number, x: number, y: number, z: number) => {
                 return new Fence(x, y, z, false, tfLists[0], tfLists[1]).stoneFence.two.xMinusZPlus();
             }
             else if(directionId2 === 3){
-                return new Fence(x, y, z, tfLists[0], tfLists[1], false, false, tfLists[2], tfLists[3]);
+                return new Fence(x, y, z, tfLists[0], tfLists[1], false, false, tfLists[2], tfLists[3]).stoneFence.two.xPlusXMinus();
             }
             else if(directionId2 === 4){
                 return new Fence(x, y, z, tfLists[0], false, false, tfLists[1]).stoneFence.two.xPlusZMinus();
