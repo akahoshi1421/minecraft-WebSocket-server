@@ -1,6 +1,4 @@
 import { Block } from "./lib/block";
-import { HalfBlock } from "./lib/halfBlock";
-import { StairBlock } from "./lib/stairBlock";
 import { Carpet } from "./lib/carpet";
 import { BLOCK_DATA } from "./lib/blockData/blockData";
 import { callSnow } from "./util/callSnow";
