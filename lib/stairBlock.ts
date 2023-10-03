@@ -1,14 +1,17 @@
 import { Block } from "./block";
+import { CornerStair } from "./stair/cornerStair";
 
 import { DownStair } from "./stair/downStair";
 import { UpStair } from "./stair/upStair";
 
 class StairBlock extends Block{
-    direction: string = "";
+    public readonly cornerStair: CornerStair;
+    private readonly direction: string = "";
 
     constructor(x: number, y: number, z: number, direction: "x-minus" | "x-plus" | "z-minus" | "z-plus"){
         super(x, y, z);
         this.direction = direction;
+        this.cornerStair = new CornerStair(this.x, this.y, this.z);
     }
 
     /**
