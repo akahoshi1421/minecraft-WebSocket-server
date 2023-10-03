@@ -1,15 +1,15 @@
-import { Block } from "../../../block";
+import { Block } from "../../block";
 
-import { XMinusZMinus as XMinusZMinusOu } from "./ou/x-minus-z-minus";
-import { XMinusZPlus as XMinusZPlusOu } from "./ou/x-minus-z-plus";
-import { XPlusZMinus as XPlusZMinusOu } from "./ou/x-plus-z-minus";
-import { XPlusZPlus as XPlusZPlusOu } from "./ou/x-plus-z-plus";
+import { XMinusZMinus as XMinusZMinusOu } from "./down-corner/ou/x-minus-z-minus";
+import { XMinusZPlus as XMinusZPlusOu } from "./down-corner/ou/x-minus-z-plus";
+import { XPlusZMinus as XPlusZMinusOu } from "./down-corner/ou/x-plus-z-minus";
+import { XPlusZPlus as XPlusZPlusOu } from "./down-corner/ou/x-plus-z-plus";
 
 
-import { XMinusZMinus as XMinusZMinusTotu } from "./totu/x-minus-z-minus";
-import { XMinusZPlus as XMinusZPlusTotu } from "./totu/x-minus-z-plus";
-import { XPlusZMinus as XPlusZMinusTotu } from "./totu/x-plus-z-minus";
-import { XPlusZPlus as XPlusZPlusTotu } from "./totu/x-plus-z-plus";
+import { XMinusZMinus as XMinusZMinusTotu } from "./down-corner/totu/x-minus-z-minus";
+import { XMinusZPlus as XMinusZPlusTotu } from "./down-corner/totu/x-minus-z-plus";
+import { XPlusZMinus as XPlusZMinusTotu } from "./down-corner/totu/x-plus-z-minus";
+import { XPlusZPlus as XPlusZPlusTotu } from "./down-corner/totu/x-plus-z-plus";
 
 class DownCorner extends Block{
     public readonly ou = {
@@ -43,7 +43,7 @@ class DownCorner extends Block{
     }
 
     private xPlusZPlusOu(){
-        return new XPlusZPlusOu(this.x, this.y, this.z).XPlusZPlus();
+        return new XPlusZPlusOu(this.x, this.y, this.z).xPlusZPlus();
     }
 
 

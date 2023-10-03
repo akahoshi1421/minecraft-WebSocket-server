@@ -5,7 +5,7 @@ class XPlusZPlus extends Vector3{
         super(x, y, z);
     }
 
-    XPlusZPlus(){
+    xPlusZPlus(){
         return `
         facet normal  1.000000e+01  0.000000e+00  0.000000e+01
             outer loop
