@@ -1,6 +1,6 @@
 import { Vector3 } from "../../../vector3";
 
-class xMinusZPlus extends Vector3{
+class XMinusZPlus extends Vector3{
     constructor(x: number, y: number, z: number){
         super(x, y, z);
     }
@@ -394,4 +394,4 @@ class xMinusZPlus extends Vector3{
     }
 }
 
-export { xMinusZPlus }
+export { XMinusZPlus }

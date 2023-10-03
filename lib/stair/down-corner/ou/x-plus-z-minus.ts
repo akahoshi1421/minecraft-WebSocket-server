@@ -395,3 +395,5 @@ class XPlusZMinus extends Vector3{
         `
     }
 }
+
+export { XPlusZMinus }
