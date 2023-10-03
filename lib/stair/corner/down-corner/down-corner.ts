@@ -1,4 +1,4 @@
-import { Block } from "../../block";
+import { Block } from "../../../block";
 
 import { XMinusZMinus as XMinusZMinusOu } from "./ou/x-minus-z-minus";
 import { XMinusZPlus as XMinusZPlusOu } from "./ou/x-minus-z-plus";
