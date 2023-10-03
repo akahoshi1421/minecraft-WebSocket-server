@@ -40,6 +40,7 @@ function stlConvert(structuredata: [[[number]]]): string {
               else if(z === 4.1 || z === 4.5) resultStringStl += callStairBlock(z, j, i, k, "x-minus");
               else if(z === 4.2 || z === 4.6) resultStringStl += callStairBlock(z, j, i, k, "z-plus");
               else if(z === 4.3 || z === 4.7) resultStringStl += callStairBlock(z, j, i, k, "z-minus");
+              else resultStringStl += callStairBlock(z, j, i, k);
               break;
 
             case BLOCK_DATA.SNOW: // 雪ブロック
