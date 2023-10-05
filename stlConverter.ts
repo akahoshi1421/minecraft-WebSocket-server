@@ -74,7 +74,7 @@ function stlConvert(structuredata: [[[number]]]): string {
     });
   });
 
-  return resultStringStl + "endsolid\n";
+  return resultStringStl + "\nendsolid\n";
 }
 
 export { stlConvert };
