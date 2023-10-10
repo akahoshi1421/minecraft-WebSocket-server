@@ -19,7 +19,7 @@ const callFenceGate = (id: number, x: number, y: number, z: number) => {
 
         case FENCE_GATE + 0.1:
             const zFenceGateId = returnId(id, 0.1);
-            const zFenceGate = fenceGate.xDir;
+            const zFenceGate = fenceGate.zDir;
 
             if(zFenceGateId === 1) return zFenceGate.normal();
             else if(zFenceGateId === 2) return zFenceGate.lower();
