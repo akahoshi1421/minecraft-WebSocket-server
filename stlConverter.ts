@@ -5,11 +5,14 @@ import { callSnow } from "./util/callSnow";
 import { callWoodFence } from "./util/callWoodFence";
 import { callGlassIronFence } from "./util/callGlassIronFence";
 import { callStoneFence } from "./util/callStoneFence";
-import { EndPortal } from "./lib/endportal";
 import { PressurePlate } from "./lib/pressurePlate";
 import { EnchantingTable } from "./lib/enchantingTable";
 import { callHalfBlock } from "./util/callHalfBlock";
 import { callStairBlock } from "./util/callStairBlock";
+import { callEndPortal } from "./util/callEndPortal";
+import { callButton } from "./util/callButton";
+import { callAnvil } from "./util/callAnvil";
+import { callFenceGate } from "./util/callFenceGate";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -58,7 +61,7 @@ function stlConvert(structuredata: [[[number]]]): string {
               break;
 
             case BLOCK_DATA.END_PORTAL: // エンドポータル
-              resultStringStl += new EndPortal(j, i, k).endPortal();
+              resultStringStl += callEndPortal(z, j, i, k);
               break;
             
             case BLOCK_DATA.PRESSURE_PLATE: // 感圧版
@@ -67,6 +70,18 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.ENCHANTING_TABLE: // エンチャントテーブル
               resultStringStl += new EnchantingTable(j, i, k).enchantingTable();
+              break;
+
+            case BLOCK_DATA.BUTTON: // ボタン
+              resultStringStl += callButton(z, j, i, k);
+              break;
+
+            case BLOCK_DATA.ANVIL: // 金床
+              resultStringStl += callAnvil(z, j, i, k);
+              break;
+
+            case BLOCK_DATA.FENCE_GATE: // フェンスゲート
+              resultStringStl += callFenceGate(z, j, i, k);
               break;
           }
         }
