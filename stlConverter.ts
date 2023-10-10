@@ -12,6 +12,7 @@ import { callStairBlock } from "./util/callStairBlock";
 import { callEndPortal } from "./util/callEndPortal";
 import { callButton } from "./util/callButton";
 import { callAnvil } from "./util/callAnvil";
+import { callFenceGate } from "./util/callFenceGate";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -77,6 +78,10 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.ANVIL: // 金床
               resultStringStl += callAnvil(z, j, i, k);
+              break;
+
+            case BLOCK_DATA.FENCE_GATE: // フェンスゲート
+              resultStringStl += callFenceGate(z, j, i, k);
               break;
           }
         }
