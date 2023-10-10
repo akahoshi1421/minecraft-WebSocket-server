@@ -5,11 +5,11 @@ import { callSnow } from "./util/callSnow";
 import { callWoodFence } from "./util/callWoodFence";
 import { callGlassIronFence } from "./util/callGlassIronFence";
 import { callStoneFence } from "./util/callStoneFence";
-import { EndPortal } from "./lib/endportal";
 import { PressurePlate } from "./lib/pressurePlate";
 import { EnchantingTable } from "./lib/enchantingTable";
 import { callHalfBlock } from "./util/callHalfBlock";
 import { callStairBlock } from "./util/callStairBlock";
+import { callEndPortal } from "./util/callEndPortal";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -58,7 +58,7 @@ function stlConvert(structuredata: [[[number]]]): string {
               break;
 
             case BLOCK_DATA.END_PORTAL: // エンドポータル
-              resultStringStl += new EndPortal(j, i, k).endPortal();
+              resultStringStl += callEndPortal(z, j, i, k);
               break;
             
             case BLOCK_DATA.PRESSURE_PLATE: // 感圧版
