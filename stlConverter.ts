@@ -11,6 +11,7 @@ import { callHalfBlock } from "./util/callHalfBlock";
 import { callStairBlock } from "./util/callStairBlock";
 import { callEndPortal } from "./util/callEndPortal";
 import { callButton } from "./util/callButton";
+import { callAnvil } from "./util/callAnvil";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -72,6 +73,10 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.BUTTON: // ボタン
               resultStringStl += callButton(z, j, i, k);
+              break;
+
+            case BLOCK_DATA.ANVIL: // 金床
+              resultStringStl += callAnvil(z, j, i, k);
               break;
           }
         }
