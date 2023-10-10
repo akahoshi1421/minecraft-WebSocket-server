@@ -10,6 +10,7 @@ import { EnchantingTable } from "./lib/enchantingTable";
 import { callHalfBlock } from "./util/callHalfBlock";
 import { callStairBlock } from "./util/callStairBlock";
 import { callEndPortal } from "./util/callEndPortal";
+import { callButton } from "./util/callButton";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -67,6 +68,10 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.ENCHANTING_TABLE: // エンチャントテーブル
               resultStringStl += new EnchantingTable(j, i, k).enchantingTable();
+              break;
+
+            case BLOCK_DATA.BUTTON: // ボタン
+              resultStringStl += callButton(z, j, i, k);
               break;
           }
         }
