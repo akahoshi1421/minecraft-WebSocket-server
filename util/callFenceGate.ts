@@ -19,7 +19,7 @@ const callFenceGate = (id: number, x: number, y: number, z: number) => {
 
         case FENCE_GATE + 0.1:
             const zFenceGateId = returnId(id, 0.1);
-            const zFenceGate = fenceGate.xDir;
+            const zFenceGate = fenceGate.zDir;
 
             if(zFenceGateId === 1) return zFenceGate.normal();
             else if(zFenceGateId === 2) return zFenceGate.lower();
@@ -37,7 +37,7 @@ const callFenceGate = (id: number, x: number, y: number, z: number) => {
  * @returns 
  */
 const returnId = (id: number, plusNum: number) => {
-    return Math.round((id - (BLOCK_DATA.STAIR_BLOCK + plusNum)) * 100);
+    return Math.round((id - (BLOCK_DATA.FENCE_GATE + plusNum)) * 100);
 }
 
 export { callFenceGate }
