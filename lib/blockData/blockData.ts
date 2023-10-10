@@ -18,7 +18,13 @@ const BLOCK_DATA = {
 
     PRESSURE_PLATE: 10.0,
 
-    ENCHANTING_TABLE: 11.0
+    ENCHANTING_TABLE: 11.0,
+
+    BUTTON: 12.0,
+
+    ANVIL: 13.0,
+
+    FENCE_GATE: 14.0
 
 }
 
