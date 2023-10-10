@@ -2,24 +2,18 @@ import { Block } from "../block";
 import { YMinus } from "./dir-y/yMinus";
 import { YPlus } from "./dir-y/yPlus";
 
-class DirXButton extends Block{
-    public readonly yDir = {
-        yMinus: this.yMinus.bind(this),
-        yPlus: this.yPlus.bind(this)
-    }
-
-
+class DirYButton extends Block{
     constructor(x: number, y: number, z: number){
         super(x, y, z);
     }
 
-    private yMinus(){
+    yMinus(){
         return new YMinus(this.x, this.y, this.z).yMinus();
     }
 
-    private yPlus(){
+    yPlus(){
         return new YPlus(this.x, this.y, this.z).yPlus();
     }
 }
 
-export { DirXButton }
+export { DirYButton }
