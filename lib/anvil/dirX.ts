@@ -1,4 +1,4 @@
-const dirX = (id: number, x: number, y: number, z: number) => {
+const dirX = (x: number, y: number, z: number) => {
     return `
     facet normal  1.000000e+01  0.000000e+00  0.000000e+01
         outer loop
