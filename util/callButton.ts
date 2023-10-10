@@ -46,7 +46,7 @@ const callButton = (id: number, x: number, y: number, z: number) => {
  * @returns 
  */
 const returnId = (id: number, plusNum: number) => {
-    return Math.round((id - (BLOCK_DATA.STAIR_BLOCK + plusNum)) * 100);
+    return Math.round((id - (BLOCK_DATA.BUTTON + plusNum)) * 100);
 }
 
 export { callButton }
