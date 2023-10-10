@@ -7,10 +7,10 @@ const callAnvil = (id: number, x: number, y: number, z: number) => {
 
     switch(id){
         case ANVIL:
-            return anvil.zDir();
+            return anvil.xDir();
 
         case ANVIL + 0.1:
-            return anvil.xDir();
+            return anvil.zDir();
     }
 }
 
