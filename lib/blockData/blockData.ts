@@ -24,7 +24,9 @@ const BLOCK_DATA = {
 
     ANVIL: 13.0,
 
-    FENCE_GATE: 14.0
+    FENCE_GATE: 14.0,
+
+    TRAP_DOOR: 15.0
 
 }
 
