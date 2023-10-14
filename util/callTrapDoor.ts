@@ -46,7 +46,7 @@ const callTrapDoor = (id: number, x: number, y: number, z: number) => {
  * @returns 
  */
 const returnId = (id: number, plusNum: number) => {
-    return Math.round((id - (BLOCK_DATA.FENCE_GATE + plusNum)) * 100);
+    return Math.round((id - (BLOCK_DATA.TRAP_DOOR + plusNum)) * 100);
 }
 
 export { callTrapDoor }
