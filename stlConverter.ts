@@ -16,6 +16,7 @@ import { callFenceGate } from "./util/callFenceGate";
 import { callTrapDoor } from "./util/callTrapDoor";
 import { Road } from "./lib/road/road";
 import { callEndRod } from "./util/callEndRod";
+import { callLightningRod } from "./util/callLightningRod";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -97,6 +98,10 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.END_ROD: // エンドロッド
               resultStringStl += callEndRod(z, j, i, k);
+              break;
+
+            case BLOCK_DATA.LIGHTNING_ROD: // 避雷針
+              resultStringStl += callLightningRod(z, j, i, k);
               break;
           }
         }
