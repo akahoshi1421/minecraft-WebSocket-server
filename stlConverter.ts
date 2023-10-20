@@ -14,6 +14,7 @@ import { callButton } from "./util/callButton";
 import { callAnvil } from "./util/callAnvil";
 import { callFenceGate } from "./util/callFenceGate";
 import { callTrapDoor } from "./util/callTrapDoor";
+import { Road } from "./lib/road/road";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]]): string {
@@ -87,6 +88,10 @@ function stlConvert(structuredata: [[[number]]]): string {
 
             case BLOCK_DATA.TRAP_DOOR: // トラップドア
               resultStringStl += callTrapDoor(z, j, i, k);
+              break;
+
+            case BLOCK_DATA.ROAD_BLOCK: // 道ブロック、耕地ブロック
+              resultStringStl += new Road(j, i, k).road();
               break;
           }
         }

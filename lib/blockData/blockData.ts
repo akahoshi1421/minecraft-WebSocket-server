@@ -26,7 +26,13 @@ const BLOCK_DATA = {
 
     FENCE_GATE: 14.0,
 
-    TRAP_DOOR: 15.0
+    TRAP_DOOR: 15.0,
+
+    ROAD_BLOCK: 16.0,
+
+    END_ROD: 17.0,
+
+    LIGHTNING_ROD: 18.0
 
 }
 
