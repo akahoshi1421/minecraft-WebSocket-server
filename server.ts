@@ -2,6 +2,8 @@ import * as ws from "ws";
 import * as uuid from "uuid";
 import { stlConvert } from "./stlConverter";
 import { sendMail } from "./sendMail";
+import { UserData } from "./types";
+import { dataBaseAccesser } from "./dataBaseAccesser";
 
 const wss = new ws.WebSocketServer({
     port: 9999,
@@ -12,7 +14,7 @@ const PATTERN = /^(\[\w+\]) (.*)/;
 wss.on("connection", function (ws) {
     console.log("接続完了！");
 
-    ws.on("message", function (rawData) {
+    ws.on("message", async function (rawData) {
         const content = JSON.parse(rawData.toString());
 
         if("body" in content){
@@ -21,7 +23,18 @@ wss.on("connection", function (ws) {
             try{
                 const reResult = chatMsg.match(PATTERN);
                 const blockData = JSON.parse(reResult[2]);
-                const stlData = stlConvert(blockData["structure"]);
+
+                const userData: UserData = {
+                    email: blockData.email,
+                    state: blockData.state,
+                    data: blockData.data
+                }
+
+                const dataBaseResult = await dataBaseAccesser(userData);
+
+                if(!dataBaseResult) return;
+                
+                const stlData = stlConvert(JSON.parse(dataBaseResult));
                 
                 sendMail(blockData["email"], stlData);
 
