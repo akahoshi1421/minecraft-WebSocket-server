@@ -35,7 +35,7 @@ const dataBaseAccesser = async (userData: UserData): Promise<string | null> => {
 
     const stlData = user.data + userData.data;
     
-    return decodeURI(stlData);
+    return stlData;
 };
 
 export { dataBaseAccesser }
