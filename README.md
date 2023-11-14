@@ -17,6 +17,8 @@ $ cd minecraft-WebSocket-server
 
 ```bash
 $ npm i
+$ npx prisma migrate
+$ npx prisma generate
 $ tsc
 ```
 
@@ -32,6 +34,7 @@ MAIL_ADDRESS="{{ YOUR_MAIL_ADDRESS }}"
 CLIENT_ID="{{ YOUR_CLIENT_ID }}"
 CLIENT_SECRET="{{ YOUR_CLIENT_SECRET }}"
 REFRESH_TOKEN="{{ YOUR_REFRESH_TOKEN }}"
+DATABASE_URL="file:./dev.db"
 ```
 
 [参考](https://zenn.dev/hisho/scraps/efbcb7cd2f7b82)
