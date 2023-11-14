@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/camp-minecraft/QureoWebsocketServer#readme",
   "dependencies": {
+    "@prisma/client": "^5.6.0",
     "@types/ws": "^8.5.5",
     "dotenv": "^16.3.1",
     "node-fetch": "^2.6.11",
@@ -30,6 +31,7 @@
     "ws": "^8.13.0"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.9"
+    "@types/nodemailer": "^6.4.9",
+    "prisma": "^5.6.0"
   }
 }
