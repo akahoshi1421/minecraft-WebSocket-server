@@ -4,6 +4,9 @@ import { UserData } from "./types"
 const prisma = new PrismaClient();
 
 const dataBaseAccesser = async (userData: UserData): Promise<string | null> => {
+    // そもそも単体で解決できる場合はDBにアクセスしない
+    if (userData.state === 3) return userData.data;
+
     const user = await prisma.user.findUnique({
         where: {
             email: userData.email
