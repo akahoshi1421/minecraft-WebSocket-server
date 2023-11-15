@@ -42,5 +42,5 @@ $ tsc
 4. サーバを走らせる
 
 ```bash
-$ node server.js
+$ npm run start
 ```
