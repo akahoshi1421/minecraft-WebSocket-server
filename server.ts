@@ -14,6 +14,8 @@ const PATTERN = /^(\[\w+\]) (.*)/;
 wss.on("connection", function (ws) {
     console.log("接続完了！");
 
+    ws.on("error", console.error);
+
     ws.on("message", async function (rawData) {
         const content = JSON.parse(rawData.toString());
 
