@@ -13,16 +13,7 @@ $ git clone https://github.com/akahoshi1421/minecraft-WebSocket-server.git
 $ cd minecraft-WebSocket-server
 ```
 
-2. プロジェクトのビルド
-
-```bash
-$ npm i
-$ npx prisma migrate
-$ npx prisma generate
-$ tsc
-```
-
-3. .envファイルの記述
+2. .envファイルの記述
 
 ```bash
 $ type nul > .env #windows
@@ -38,6 +29,15 @@ DATABASE_URL="file:./dev.db"
 ```
 
 [参考](https://zenn.dev/hisho/scraps/efbcb7cd2f7b82)
+
+3. プロジェクトのビルド
+
+```bash
+$ npm i
+$ npx prisma migrate dev --name init
+$ npx prisma generate
+$ tsc
+```
 
 4. サーバを走らせる
 
