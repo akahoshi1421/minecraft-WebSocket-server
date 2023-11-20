@@ -37,7 +37,7 @@ wss.on("connection", function (ws) {
 
                 if(!dataBaseResult) return;
                 
-                const stlData = stlConvert(JSON.parse(dataBaseResult));
+                const stlData = stlConvert(JSON.parse(dataBaseResult), userData.scale);
                 
                 sendMail(userData.email, stlData);
 

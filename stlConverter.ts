@@ -19,7 +19,7 @@ import { callEndRod } from "./util/callEndRod";
 import { callLightningRod } from "./util/callLightningRod";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
-function stlConvert(structuredata: [[[number]]]): string {
+function stlConvert(structuredata: [[[number]]], scale: number): string {
   let resultStringStl = "solid result";
 
   structuredata.forEach((y, i) => {
@@ -29,7 +29,7 @@ function stlConvert(structuredata: [[[number]]]): string {
         if (z !== 0) {
           switch (Math.floor(z)) {
             case BLOCK_DATA.NORMAL:
-              resultStringStl += new Block(j, i, k).block();
+              resultStringStl += new Block(j, i, k).block(scale);
               break;
 
             case BLOCK_DATA.CARPET: // カーペット
