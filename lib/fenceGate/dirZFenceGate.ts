@@ -7,12 +7,12 @@ class DirZFenceGate extends Block{
         super(x, y, z);
     }
 
-    normal(){
-        return new ZNormal(this.x, this.y, this.z).zNormal();
+    normal(scale: number){
+        return new ZNormal(this.x, this.y, this.z).zNormal(scale);
     }
 
-    lower(){
-        return new ZLower(this.x, this.y, this.z).zLower();
+    lower(scale: number){
+        return new ZLower(this.x, this.y, this.z).zLower(scale);
     }
 }
 

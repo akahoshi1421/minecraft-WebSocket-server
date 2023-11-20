@@ -62,72 +62,72 @@ class StoneFence extends Block{
     }
 
     // 0個
-    private zeroNormal(){
-        return new ZeroNormal(this.x, this.y, this.z).normal();
+    private zeroNormal(scale: number){
+        return new ZeroNormal(this.x, this.y, this.z).normal(scale);
     }
 
     // 1個
-    private oneXMinus(){
-        return new OneXMinus(this.x, this.y, this.z, this.xMinusHeigher).xMinus();
+    private oneXMinus(scale: number){
+        return new OneXMinus(this.x, this.y, this.z, this.xMinusHeigher).xMinus(scale);
     }
 
-    private oneXPlus(){
-        return new OneXPlus(this.x, this.y, this.z, this.xPlusHeigher).xPlus();
+    private oneXPlus(scale: number){
+        return new OneXPlus(this.x, this.y, this.z, this.xPlusHeigher).xPlus(scale);
     }
 
-    private oneZMinus(){
-        return new OneZMinus(this.x, this.y, this.z, this.zMinusHeigher).zMinus();
+    private oneZMinus(scale: number){
+        return new OneZMinus(this.x, this.y, this.z, this.zMinusHeigher).zMinus(scale);
     }
 
-    private oneZPlus(){
-        return new OneZPlus(this.x, this.y, this.z, this.zPlusHeigher).zPlus();
+    private oneZPlus(scale: number){
+        return new OneZPlus(this.x, this.y, this.z, this.zPlusHeigher).zPlus(scale);
     }
 
     // 2個
-    private twoXMinusZMinus(){
-        return new TwoXMinusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zMinusHeigher).xMinusZMinus();
+    private twoXMinusZMinus(scale: number){
+        return new TwoXMinusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zMinusHeigher).xMinusZMinus(scale);
     }
 
-    private twoXMinusZPlus(){
-        return new TwoXMinusZPlus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher).xMinusZPlus();
+    private twoXMinusZPlus(scale: number){
+        return new TwoXMinusZPlus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher).xMinusZPlus(scale);
     }
 
-    private twoXPlusXMinus(){
-        return new TwoXPlusXMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.centerHeigher, this.centerTaller).xPlusXMinus();
+    private twoXPlusXMinus(scale: number){
+        return new TwoXPlusXMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.centerHeigher, this.centerTaller).xPlusXMinus(scale);
     }
 
-    private twoXPlusZMinus(){
-        return new TwoXPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zMinusHeigher).xPlusZMinus();
+    private twoXPlusZMinus(scale: number){
+        return new TwoXPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zMinusHeigher).xPlusZMinus(scale);
     }
 
-    private twoXPlusZPlus(){
-        return new TwoXPlusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher).xPlusZPlus();
+    private twoXPlusZPlus(scale: number){
+        return new TwoXPlusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher).xPlusZPlus(scale);
     }
 
-    private twoZPlusZMinus(){
-        return new TwoZPlusZMinus(this.x, this.y, this.z, this.zPlusHeigher, this.zMinusHeigher, this.centerHeigher, this.centerTaller).zPlusZMinus();
+    private twoZPlusZMinus(scale: number){
+        return new TwoZPlusZMinus(this.x, this.y, this.z, this.zPlusHeigher, this.zMinusHeigher, this.centerHeigher, this.centerTaller).zPlusZMinus(scale);
     }
 
     // 3個
-    private threeXMinusZPlusZMinus(){
-        return new ThreeXMinusZPlusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xMinusZPlusZMinus();
+    private threeXMinusZPlusZMinus(scale: number){
+        return new ThreeXMinusZPlusZMinus(this.x, this.y, this.z, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xMinusZPlusZMinus(scale);
     }
 
-    private threeXPlusXMinusZMinus(){
-        return new ThreeXPlusXMinusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zMinusHeigher).xPlusXMinusZMinus();
+    private threeXPlusXMinusZMinus(scale: number){
+        return new ThreeXPlusXMinusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zMinusHeigher).xPlusXMinusZMinus(scale);
     }
 
-    private threeXPlusXMinusZPlus(){
-        return new ThreeXPlusXMinusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher).xPlusXMinusZPlus();
+    private threeXPlusXMinusZPlus(scale: number){
+        return new ThreeXPlusXMinusZPlus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher).xPlusXMinusZPlus(scale);
     }
 
-    private threeXPlusZPlusZMinus(){
-        return new ThreeXPlusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusZPlusZMinus();
+    private threeXPlusZPlusZMinus(scale: number){
+        return new ThreeXPlusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusZPlusZMinus(scale);
     }
 
     // 4個
-    private fourXPlusXMinusZPlusZMinus(){
-        return new FourXPlusXMinusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusXMinusZPlusZMinus();
+    private fourXPlusXMinusZPlusZMinus(scale: number){
+        return new FourXPlusXMinusZPlusZMinus(this.x, this.y, this.z, this.xPlusHeigher, this.xMinusHeigher, this.zPlusHeigher, this.zMinusHeigher).xPlusXMinusZPlusZMinus(scale);
     }
 }
 
