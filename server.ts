@@ -29,6 +29,7 @@ wss.on("connection", function (ws) {
                 const userData: UserData = {
                     email: blockData.email,
                     state: blockData.state,
+                    scale: blockData.scale,
                     data: blockData.data
                 }
 
