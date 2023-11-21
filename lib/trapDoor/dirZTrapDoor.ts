@@ -7,12 +7,12 @@ class DirZTrapDoor extends Block{
         super(x, y, z);
     }
 
-    down(){
-        return new ZDown(this.x, this.y, this.z).zDown();
+    down(scale: number){
+        return new ZDown(this.x, this.y, this.z).zDown(scale);
     }
 
-    up(){
-        return new ZUp(this.x, this.y, this.z).zUp();
+    up(scale: number){
+        return new ZUp(this.x, this.y, this.z).zUp(scale);
     }
 }
 

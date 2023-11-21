@@ -12,36 +12,36 @@ class Snow extends Block{
         super(x, y, z);
     }
     
-    one(){
-        return snowOne(this.x, this.y, this.z);
+    one(scale: number){
+        return snowOne(this.x, this.y, this.z, scale);
     }
 
-    two(){
-        return snowTwo(this.x, this.y, this.z);
+    two(scale: number){
+        return snowTwo(this.x, this.y, this.z, scale);
     }
 
-    three(){
-        return snowThree(this.x, this.y, this.z);
+    three(scale: number){
+        return snowThree(this.x, this.y, this.z, scale);
     }
 
-    four(){
-        return snowFour(this.x, this.y, this.z);
+    four(scale: number){
+        return snowFour(this.x, this.y, this.z, scale);
     }
 
-    five(){
-        return snowFive(this.x, this.y, this.z);
+    five(scale: number){
+        return snowFive(this.x, this.y, this.z, scale);
     }
 
-    six(){
-        return snowSix(this.x, this.y, this.z);
+    six(scale: number){
+        return snowSix(this.x, this.y, this.z, scale);
     }
 
-    seven(){
-        return snowSeven(this.x, this.y, this.z);
+    seven(scale: number){
+        return snowSeven(this.x, this.y, this.z, scale);
     }
 
-    eight(){
-        return this.block();
+    eight(scale: number){
+        return this.block(scale);
     }
 }
 

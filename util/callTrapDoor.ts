@@ -1,7 +1,7 @@
 import { BLOCK_DATA } from "../lib/blockData/blockData";
 import { TrapDoor } from "../lib/trapDoor"
 
-const callTrapDoor = (id: number, x: number, y: number, z: number) => {
+const callTrapDoor = (id: number, x: number, y: number, z: number, scale: number) => {
     const trapDoor = new TrapDoor(x, y, z);
     const TRAP_DOOR = BLOCK_DATA.TRAP_DOOR;
 
@@ -12,8 +12,8 @@ const callTrapDoor = (id: number, x: number, y: number, z: number) => {
             const xTrapDoorId = returnId(id, 0);
             const xTrapDoor = trapDoor.xDir;
 
-            if(xTrapDoorId === 1) return xTrapDoor.down();
-            else if(xTrapDoorId === 2) return xTrapDoor.up();
+            if(xTrapDoorId === 1) return xTrapDoor.down(scale);
+            else if(xTrapDoorId === 2) return xTrapDoor.up(scale);
 
             return "";
 
@@ -21,8 +21,8 @@ const callTrapDoor = (id: number, x: number, y: number, z: number) => {
             const yTrapDoorId = returnId(id, 0.1);
             const yTrapDoor = trapDoor.yDir;
 
-            if(yTrapDoorId === 1) return yTrapDoor.down();
-            else if(yTrapDoorId === 2) return yTrapDoor.up();
+            if(yTrapDoorId === 1) return yTrapDoor.down(scale);
+            else if(yTrapDoorId === 2) return yTrapDoor.up(scale);
 
             return "";
 
@@ -30,8 +30,8 @@ const callTrapDoor = (id: number, x: number, y: number, z: number) => {
             const zTrapDoorId = returnId(id, 0.2);
             const zTrapDoor = trapDoor.zDir;
 
-            if(zTrapDoorId === 1) return zTrapDoor.down();
-            else if(zTrapDoorId === 2) return zTrapDoor.up();
+            if(zTrapDoorId === 1) return zTrapDoor.down(scale);
+            else if(zTrapDoorId === 2) return zTrapDoor.up(scale);
 
             return "";
     }

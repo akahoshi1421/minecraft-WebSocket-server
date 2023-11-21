@@ -29,6 +29,7 @@ wss.on("connection", function (ws) {
                 const userData: UserData = {
                     email: blockData.email,
                     state: blockData.state,
+                    scale: blockData.scale,
                     data: blockData.data
                 }
 
@@ -36,7 +37,7 @@ wss.on("connection", function (ws) {
 
                 if(!dataBaseResult) return;
                 
-                const stlData = stlConvert(JSON.parse(dataBaseResult));
+                const stlData = stlConvert(JSON.parse(dataBaseResult), userData.scale);
                 
                 sendMail(userData.email, stlData);
 

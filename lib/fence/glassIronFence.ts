@@ -50,72 +50,72 @@ class GlassIronFence extends Block{
     }
 
     // 0個
-    private zeroNormal(){
-        return new ZeroNormal(this.x, this.y, this.z).normal();
+    private zeroNormal(scale: number){
+        return new ZeroNormal(this.x, this.y, this.z).normal(scale);
     }
 
     // 1個
-    private oneXMinus(){
-        return new OneXMinus(this.x, this.y, this.z).xMinus();
+    private oneXMinus(scale: number){
+        return new OneXMinus(this.x, this.y, this.z).xMinus(scale);
     }
 
-    private oneXPlus(){
-        return new OneXPlus(this.x, this.y, this.z).xPlus();
+    private oneXPlus(scale: number){
+        return new OneXPlus(this.x, this.y, this.z).xPlus(scale);
     }
 
-    private oneZMinus(){
-        return new OneZMinus(this.x, this.y, this.z).zMinus();
+    private oneZMinus(scale: number){
+        return new OneZMinus(this.x, this.y, this.z).zMinus(scale);
     }
 
-    private oneZPlus(){
-        return new OneZPlus(this.x, this.y, this.z).zPlus();
+    private oneZPlus(scale: number){
+        return new OneZPlus(this.x, this.y, this.z).zPlus(scale);
     }
 
     // 2個
-    private twoXMinusZMinus(){
-        return new TwoXMinusZMinus(this.x, this.y, this.z).xMinusZMinus();
+    private twoXMinusZMinus(scale: number){
+        return new TwoXMinusZMinus(this.x, this.y, this.z).xMinusZMinus(scale);
     }
 
-    private twoXMinusZPlus(){
-        return new TwoXMinusZPlus(this.x, this.y, this.z).xMinusZPlus();
+    private twoXMinusZPlus(scale: number){
+        return new TwoXMinusZPlus(this.x, this.y, this.z).xMinusZPlus(scale);
     }
 
-    private twoXPlusXMinus(){
-        return new TwoXPlusXMinus(this.x, this.y, this.z).xPlusXMinus();
+    private twoXPlusXMinus(scale: number){
+        return new TwoXPlusXMinus(this.x, this.y, this.z).xPlusXMinus(scale);
     }
 
-    private twoXPlusZMinus(){
-        return new TwoXPlusZMinus(this.x, this.y, this.z).xPlusZMinus();
+    private twoXPlusZMinus(scale: number){
+        return new TwoXPlusZMinus(this.x, this.y, this.z).xPlusZMinus(scale);
     }
 
-    private twoXPlusZPlus(){
-        return new TwoXPlusZPlus(this.x, this.y, this.z).xPlusZPlus();
+    private twoXPlusZPlus(scale: number){
+        return new TwoXPlusZPlus(this.x, this.y, this.z).xPlusZPlus(scale);
     }
 
-    private twoZPlusZMinus(){
-        return new TwoZPlusZMinus(this.x, this.y, this.z).zPlusZMinus();
+    private twoZPlusZMinus(scale: number){
+        return new TwoZPlusZMinus(this.x, this.y, this.z).zPlusZMinus(scale);
     }
 
     // 3個
-    private threeXMinusZPlusZMinus(){
-        return new ThreeXMinusZPlusZMinus(this.x, this.y, this.z).xMinusZPlusZMinus();
+    private threeXMinusZPlusZMinus(scale: number){
+        return new ThreeXMinusZPlusZMinus(this.x, this.y, this.z).xMinusZPlusZMinus(scale);
     }
 
-    private threeXPlusXMinusZMinus(){
-        return new ThreeXPlusXMinusZMinus(this.x, this.y, this.z).xPlusXMinusZMinus();
+    private threeXPlusXMinusZMinus(scale: number){
+        return new ThreeXPlusXMinusZMinus(this.x, this.y, this.z).xPlusXMinusZMinus(scale);
     }
 
-    private threeXPlusXMinusZPlus(){
-        return new ThreeXPlusXMinusZPlus(this.x, this.y, this.z).xPlusXMinusZPlus();
+    private threeXPlusXMinusZPlus(scale: number){
+        return new ThreeXPlusXMinusZPlus(this.x, this.y, this.z).xPlusXMinusZPlus(scale);
     }
 
-    private threeXPlusZPlusZMinus(){
-        return new ThreeXPlusZPlusZMinus(this.x, this.y, this.z).xPlusZPlusZMinus();
+    private threeXPlusZPlusZMinus(scale: number){
+        return new ThreeXPlusZPlusZMinus(this.x, this.y, this.z).xPlusZPlusZMinus(scale);
     }
 
     // 4個
-    private fourXPlusXMinusZPlusZMinus(){
-        return new FourXPlusXMinusZPlusZMinus(this.x, this.y, this.z).xPlusXMinusZPlusZMinus();
+    private fourXPlusXMinusZPlusZMinus(scale: number){
+        return new FourXPlusXMinusZPlusZMinus(this.x, this.y, this.z).xPlusXMinusZPlusZMinus(scale);
     }
 }
 

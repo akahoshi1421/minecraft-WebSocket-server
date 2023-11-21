@@ -1,7 +1,7 @@
 import { BLOCK_DATA } from "../lib/blockData/blockData";
 import { FenceGate } from "../lib/fenceGate"
 
-const callFenceGate = (id: number, x: number, y: number, z: number) => {
+const callFenceGate = (id: number, x: number, y: number, z: number, scale: number) => {
     const fenceGate = new FenceGate(x, y, z);
     const FENCE_GATE = BLOCK_DATA.FENCE_GATE;
 
@@ -12,8 +12,8 @@ const callFenceGate = (id: number, x: number, y: number, z: number) => {
             const xFenceGateId = returnId(id, 0);
             const xFenceGate = fenceGate.xDir;
 
-            if(xFenceGateId === 1) return xFenceGate.normal();
-            else if(xFenceGateId === 2) return xFenceGate.lower();
+            if(xFenceGateId === 1) return xFenceGate.normal(scale);
+            else if(xFenceGateId === 2) return xFenceGate.lower(scale);
 
             return "";
 
@@ -21,8 +21,8 @@ const callFenceGate = (id: number, x: number, y: number, z: number) => {
             const zFenceGateId = returnId(id, 0.1);
             const zFenceGate = fenceGate.zDir;
 
-            if(zFenceGateId === 1) return zFenceGate.normal();
-            else if(zFenceGateId === 2) return zFenceGate.lower();
+            if(zFenceGateId === 1) return zFenceGate.normal(scale);
+            else if(zFenceGateId === 2) return zFenceGate.lower(scale);
 
             return "";
     }
