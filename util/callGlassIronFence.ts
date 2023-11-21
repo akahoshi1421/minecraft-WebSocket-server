@@ -1,7 +1,7 @@
 import { Fence } from "../lib/fence";
 import { BLOCK_DATA } from "../lib/blockData/blockData";
 
-const callGlassIronFence = (id: number, x: number, y: number, z: number) => {
+const callGlassIronFence = (id: number, x: number, y: number, z: number, scale: number) => {
     const glassIronFence = new Fence(x, y, z).glassIronFence;
     const GLASS_IRON_FENCE_BLOCK = BLOCK_DATA.GLASS_IRON_FENCE;
 
@@ -9,23 +9,23 @@ const callGlassIronFence = (id: number, x: number, y: number, z: number) => {
 
     switch(idNum1){
         case GLASS_IRON_FENCE_BLOCK:
-            return glassIronFence.zero.normal();
+            return glassIronFence.zero.normal(scale);
 
         case GLASS_IRON_FENCE_BLOCK + 0.1:
             const glassIronFenceOne = glassIronFence.one;
             const directionId1 = returnId(id, 0.1);
 
             if(directionId1 === 1){
-                return glassIronFenceOne.xMinus();
+                return glassIronFenceOne.xMinus(scale);
             }
             else if(directionId1 === 2){
-                return glassIronFenceOne.xPlus();
+                return glassIronFenceOne.xPlus(scale);
             }
             else if(directionId1 === 3){
-                return glassIronFenceOne.zMinus();
+                return glassIronFenceOne.zMinus(scale);
             }
             else if(directionId1 === 4){
-                return glassIronFenceOne.zPlus();
+                return glassIronFenceOne.zPlus(scale);
             }
 
             return "";
@@ -35,22 +35,22 @@ const callGlassIronFence = (id: number, x: number, y: number, z: number) => {
             const directionId2 = returnId(id, 0.2);
 
             if(directionId2 === 1){
-                return glassIronFenceTwo.xMinusZMinus();
+                return glassIronFenceTwo.xMinusZMinus(scale);
             }
             else if(directionId2 === 2){
-                return glassIronFenceTwo.xMinusZPlus();
+                return glassIronFenceTwo.xMinusZPlus(scale);
             }
             else if(directionId2 === 3){
-                return glassIronFenceTwo.xPlusXMinus();
+                return glassIronFenceTwo.xPlusXMinus(scale);
             }
             else if(directionId2 === 4){
-                return glassIronFenceTwo.xPlusZMinus();
+                return glassIronFenceTwo.xPlusZMinus(scale);
             }
             else if(directionId2 === 5){
-                return glassIronFenceTwo.xPlusZPlus();
+                return glassIronFenceTwo.xPlusZPlus(scale);
             }
             else if(directionId2 === 6){
-                return glassIronFenceTwo.zPlusZMinus();
+                return glassIronFenceTwo.zPlusZMinus(scale);
             }
 
             return "";
@@ -60,22 +60,22 @@ const callGlassIronFence = (id: number, x: number, y: number, z: number) => {
             const directionId3 = returnId(id, 0.3);
 
             if(directionId3 === 1){
-                return glassIronFenceThree.xMinusZPlusZMinus();
+                return glassIronFenceThree.xMinusZPlusZMinus(scale);
             }
             else if(directionId3 === 2){
-                return glassIronFenceThree.xPlusXMinusZMinus();
+                return glassIronFenceThree.xPlusXMinusZMinus(scale);
             }
             else if(directionId3 === 3){
-                return glassIronFenceThree.xPlusXMinusZPlus();
+                return glassIronFenceThree.xPlusXMinusZPlus(scale);
             }
             else if(directionId3 === 4){
-                return glassIronFenceThree.xPlusZPlusZMinus();
+                return glassIronFenceThree.xPlusZPlusZMinus(scale);
             }
 
             return "";
 
         case GLASS_IRON_FENCE_BLOCK + 0.4:
-            return glassIronFence.four.xPlusXMinusZPlusZMinus();
+            return glassIronFence.four.xPlusXMinusZPlusZMinus(scale);
 
     }
 

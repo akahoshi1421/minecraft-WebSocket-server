@@ -7,12 +7,12 @@ class DirZEndRod extends Block{
         super(x, y, z);
     }
 
-    zMinus(){
-        return new ZMinus(this.x, this.y, this.z).zMinus();
+    zMinus(scale: number){
+        return new ZMinus(this.x, this.y, this.z).zMinus(scale);
     }
 
-    zPlus(){
-        return new ZPlus(this.x, this.y, this.z).zPlus();
+    zPlus(scale: number){
+        return new ZPlus(this.x, this.y, this.z).zPlus(scale);
     }
 }
 

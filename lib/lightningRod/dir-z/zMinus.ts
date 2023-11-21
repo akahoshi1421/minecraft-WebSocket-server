@@ -5,258 +5,258 @@ class zMinus extends Vector3{
         super(x, y, z);
     }
 
-    zMinus(){
+    zMinus(scale: number){
         return `
         facet normal  1.000000e+01  0.000000e+00  0.000000e+01
             outer loop
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-            endloop
-        endfacet
-        facet normal  1.000000e+01  0.000000e+00  0.000000e+01
-            outer loop
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-            endloop
-        endfacet
-
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-            endloop
-        endfacet
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-            endloop
-        endfacet
-
-        facet normal  0.000000e+01  1.000000e+01  0.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-            endloop
-        endfacet
-        facet normal  0.000000e+01  1.000000e+01  0.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-            endloop
-        endfacet
-
-        facet normal  0.000000e+01  -1.000000e+01  0.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-            endloop
-        endfacet
-        facet normal  0.000000e+01  -1.000000e+01  0.000000e+01
-            outer loop
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-            endloop
-        endfacet
-
-        facet normal  0.000000e+00  0.000000e+00  1.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-            endloop
-        endfacet
-        facet normal  0.000000e+00  0.000000e+00  1.000000e+01
-            outer loop
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.250000e+01
-
-            endloop
-        endfacet
-
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
-            outer loop
-                vertex  ${this.x}.375000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-            endloop
-        endfacet
-        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
-            outer loop
-                vertex  ${this.x}.625000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.625000e+01  ${this.y}.375000e+01  ${this.z}.000000e+01
-
-                vertex  ${this.x}.375000e+01  ${this.y}.625000e+01  ${this.z}.000000e+01
-            endloop
-        endfacet
-
-
-
-
-        facet normal  1.000000e+01  0.000000e+00  0.000000e+01
-            outer loop
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
-
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
-
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
             endloop
         endfacet
         facet normal  1.000000e+01  0.000000e+00  0.000000e+01
             outer loop
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
             endloop
         endfacet
 
         facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
             endloop
         endfacet
         facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
             endloop
         endfacet
 
         facet normal  0.000000e+01  1.000000e+01  0.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
             endloop
         endfacet
         facet normal  0.000000e+01  1.000000e+01  0.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
             endloop
         endfacet
 
         facet normal  0.000000e+01  -1.000000e+01  0.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
             endloop
         endfacet
         facet normal  0.000000e+01  -1.000000e+01  0.000000e+01
             outer loop
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
             endloop
         endfacet
 
         facet normal  0.000000e+00  0.000000e+00  1.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
             endloop
         endfacet
         facet normal  0.000000e+00  0.000000e+00  1.000000e+01
             outer loop
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z+1}.000000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
 
             endloop
         endfacet
 
         facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
             outer loop
-                vertex  ${this.x}.437500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
             endloop
         endfacet
         facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
             outer loop
-                vertex  ${this.x}.562500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.562500e+01  ${this.y}.437500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.625000e+01`) * scale}  ${Number(`${this.y}.375000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
 
-                vertex  ${this.x}.437500e+01  ${this.y}.562500e+01  ${this.z}.250000e+01
+                vertex  ${Number(`${this.x}.375000e+01`) * scale}  ${Number(`${this.y}.625000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
+            endloop
+        endfacet
+
+
+
+
+        facet normal  1.000000e+01  0.000000e+00  0.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+            endloop
+        endfacet
+        facet normal  1.000000e+01  0.000000e+00  0.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+            endloop
+        endfacet
+
+        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+            endloop
+        endfacet
+        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+            endloop
+        endfacet
+
+        facet normal  0.000000e+01  1.000000e+01  0.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+            endloop
+        endfacet
+        facet normal  0.000000e+01  1.000000e+01  0.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+            endloop
+        endfacet
+
+        facet normal  0.000000e+01  -1.000000e+01  0.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+            endloop
+        endfacet
+        facet normal  0.000000e+01  -1.000000e+01  0.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+            endloop
+        endfacet
+
+        facet normal  0.000000e+00  0.000000e+00  1.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+            endloop
+        endfacet
+        facet normal  0.000000e+00  0.000000e+00  1.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z+1}.000000e+01`) * scale}
+
+            endloop
+        endfacet
+
+        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+            endloop
+        endfacet
+        facet normal  0.000000e+00  0.000000e+00  -1.000000e+01
+            outer loop
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.562500e+01`) * scale}  ${Number(`${this.y}.437500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
+
+                vertex  ${Number(`${this.x}.437500e+01`) * scale}  ${Number(`${this.y}.562500e+01`) * scale}  ${Number(`${this.z}.250000e+01`) * scale}
             endloop
         endfacet
 

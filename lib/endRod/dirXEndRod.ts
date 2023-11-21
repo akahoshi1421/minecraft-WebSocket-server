@@ -7,12 +7,12 @@ class DirXEndRod extends Vector3{
         super(x, y, z);
     }
 
-    xMinus(){
-        return new XMinus(this.x, this.y, this.z).xMinus();
+    xMinus(scale: number){
+        return new XMinus(this.x, this.y, this.z).xMinus(scale);
     }
 
-    xPlus(){
-        return new XPlus(this.x, this.y, this.z).xPlus();
+    xPlus(scale: number){
+        return new XPlus(this.x, this.y, this.z).xPlus(scale);
     }
 }
 

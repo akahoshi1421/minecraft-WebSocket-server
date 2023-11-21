@@ -1,7 +1,7 @@
 import { BLOCK_DATA } from "../lib/blockData/blockData";
 import { LightningRod } from "../lib/lightningRod"
 
-const callLightningRod = (id: number, x: number, y: number, z: number) => {
+const callLightningRod = (id: number, x: number, y: number, z: number, scale: number) => {
     const lightningRod = new LightningRod(x, y, z);
     const LIGHTNING_ROD = BLOCK_DATA.LIGHTNING_ROD;
 
@@ -12,8 +12,8 @@ const callLightningRod = (id: number, x: number, y: number, z: number) => {
             const xlightningRodId = returnId(id, 0);
             const xlightningRod = lightningRod.xDir;
 
-            if(xlightningRodId === 1) return xlightningRod.xMinus();
-            else if(xlightningRodId === 2) return xlightningRod.xPlus();
+            if(xlightningRodId === 1) return xlightningRod.xMinus(scale);
+            else if(xlightningRodId === 2) return xlightningRod.xPlus(scale);
 
             return "";
 
@@ -21,8 +21,8 @@ const callLightningRod = (id: number, x: number, y: number, z: number) => {
             const ylightningRodId = returnId(id, 0.1);
             const ylightningRod = lightningRod.yDir;
 
-            if(ylightningRodId === 1) return ylightningRod.yMinus();
-            else if(ylightningRodId === 2) return ylightningRod.yPlus();
+            if(ylightningRodId === 1) return ylightningRod.yMinus(scale);
+            else if(ylightningRodId === 2) return ylightningRod.yPlus(scale);
 
             return "";
 
@@ -30,8 +30,8 @@ const callLightningRod = (id: number, x: number, y: number, z: number) => {
             const zlightningRodId = returnId(id, 0.2);
             const zlightningRod = lightningRod.zDir;
 
-            if(zlightningRodId === 1) return zlightningRod.zMinus();
-            else if(zlightningRodId === 2) return zlightningRod.zPlus();
+            if(zlightningRodId === 1) return zlightningRod.zMinus(scale);
+            else if(zlightningRodId === 2) return zlightningRod.zPlus(scale);
 
             return "";
     }

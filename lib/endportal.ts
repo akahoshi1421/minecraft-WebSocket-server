@@ -7,12 +7,12 @@ class EndPortal extends Block{
         super(x, y, z);
     }
 
-    normal(){
-        return endportalNormal(this.x, this.y, this.z);
+    normal(scale: number){
+        return endportalNormal(this.x, this.y, this.z, scale);
     }
 
-    withEye(){
-        return endportalWithEye(this.x, this.y, this.z);
+    withEye(scale: number){
+        return endportalWithEye(this.x, this.y, this.z, scale);
     }
 }
 

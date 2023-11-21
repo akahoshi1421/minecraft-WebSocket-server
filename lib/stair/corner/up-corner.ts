@@ -30,37 +30,37 @@ class UpCorner extends Block{
         super(x, y, z);
     }
 
-    private xMinusZMinusOu(){
-        return new XMinusZMinusOu(this.x, this.y, this.z).xMinusZMinus();
+    private xMinusZMinusOu(scale: number){
+        return new XMinusZMinusOu(this.x, this.y, this.z).xMinusZMinus(scale);
     }
 
-    private xMinusZPlusOu(){
-        return new XMinusZPlusOu(this.x, this.y, this.z).xMinusZPlus();
+    private xMinusZPlusOu(scale: number){
+        return new XMinusZPlusOu(this.x, this.y, this.z).xMinusZPlus(scale);
     }
 
-    private xPlusZminusOu(){
-        return new XPlusZMinusOu(this.x, this.y, this.z).xPlusZMinus();
+    private xPlusZminusOu(scale: number){
+        return new XPlusZMinusOu(this.x, this.y, this.z).xPlusZMinus(scale);
     }
 
-    private xPlusZPlusOu(){
-        return new XPlusZPlusOu(this.x, this.y, this.z).xPlusZPlus();
+    private xPlusZPlusOu(scale: number){
+        return new XPlusZPlusOu(this.x, this.y, this.z).xPlusZPlus(scale);
     }
 
 
-    private xMinusZMinusTotu(){
-        return new XMinusZMinusTotu(this.x, this.y, this.z).xMinusZMinus();
+    private xMinusZMinusTotu(scale: number){
+        return new XMinusZMinusTotu(this.x, this.y, this.z).xMinusZMinus(scale);
     }
 
-    private xMinusZPlusTotu(){
-        return new XMinusZPlusTotu(this.x, this.y, this.z).xMinusZPlus();
+    private xMinusZPlusTotu(scale: number){
+        return new XMinusZPlusTotu(this.x, this.y, this.z).xMinusZPlus(scale);
     }
 
-    private xPlusZminusTotu(){
-        return new XPlusZMinusTotu(this.x, this.y, this.z).xPlusZMinus();
+    private xPlusZminusTotu(scale: number){
+        return new XPlusZMinusTotu(this.x, this.y, this.z).xPlusZMinus(scale);
     }
 
-    private xPlusZPlusTotu(){
-        return new XPlusZPlusTotu(this.x, this.y, this.z).xPlusZPlus();
+    private xPlusZPlusTotu(scale: number){
+        return new XPlusZPlusTotu(this.x, this.y, this.z).xPlusZPlus(scale);
     }
 }
 

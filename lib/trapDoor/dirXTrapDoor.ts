@@ -7,12 +7,12 @@ class DirXTrapDoor extends Block{
         super(x, y, z);
     }
 
-    down(){
-        return new XDown(this.x, this.y, this.z).xDown();
+    down(scale: number){
+        return new XDown(this.x, this.y, this.z).xDown(scale);
     }
 
-    up(){
-        return new XUp(this.x, this.y, this.z).xUp();
+    up(scale: number){
+        return new XUp(this.x, this.y, this.z).xUp(scale);
     }
 }
 

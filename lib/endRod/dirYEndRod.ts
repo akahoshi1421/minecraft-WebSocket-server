@@ -7,12 +7,12 @@ class DirYEndRod extends Block{
         super(x, y, z);
     }
 
-    yMinus(){
-        return new YMinus(this.x, this.y, this.z).yMinus();
+    yMinus(scale: number){
+        return new YMinus(this.x, this.y, this.z).yMinus(scale);
     }
 
-    yPlus(){
-        return new YPlus(this.x, this.y, this.z).yPlus();
+    yPlus(scale: number){
+        return new YPlus(this.x, this.y, this.z).yPlus(scale);
     }
 }
 

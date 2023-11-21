@@ -7,12 +7,12 @@ class Anvil extends Block{
         super(x, y, z);
     }
 
-    xDir(){
-        return dirX(this.x, this.y, this.z);
+    xDir(scale: number){
+        return dirX(this.x, this.y, this.z, scale);
     }
 
-    zDir(){
-        return dirZ(this.x, this.y, this.z);
+    zDir(scale: number){
+        return dirZ(this.x, this.y, this.z, scale);
     }
 }
 

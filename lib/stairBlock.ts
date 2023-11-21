@@ -18,16 +18,16 @@ class StairBlock extends Block{
      * 上むきの階段ブロックのSTLデータ化
      * @returns 
      */
-    up() {
+    up(scale: number) {
         switch(this.direction){
             case "x-minus":
-                return UpStair.xMinus(this.x, this.y, this.z);
+                return UpStair.xMinus(this.x, this.y, this.z, scale);
             case "x-plus":
-                return UpStair.xPlus(this.x, this.y, this.z);
+                return UpStair.xPlus(this.x, this.y, this.z, scale);
             case "z-plus":
-                return UpStair.zPlus(this.x, this.y, this.z);
+                return UpStair.zPlus(this.x, this.y, this.z, scale);
             case "z-minus":
-                return UpStair.zMinus(this.x, this.y, this.z);
+                return UpStair.zMinus(this.x, this.y, this.z, scale);
         }
     }
 
@@ -35,16 +35,16 @@ class StairBlock extends Block{
      * 下むきの階段ブロックのSTLデータ化
      * @returns 
      */
-    down() {
+    down(scale: number) {
         switch(this.direction){
             case "x-minus":
-                return DownStair.xMinus(this.x, this.y, this.z);
+                return DownStair.xMinus(this.x, this.y, this.z, scale);
             case "x-plus":
-                return DownStair.xPlus(this.x, this.y, this.z);
+                return DownStair.xPlus(this.x, this.y, this.z, scale);
             case "z-plus":
-                return DownStair.zPlus(this.x, this.y, this.z);
+                return DownStair.zPlus(this.x, this.y, this.z, scale);
             case "z-minus":
-                return DownStair.zMinus(this.x, this.y, this.z);
+                return DownStair.zMinus(this.x, this.y, this.z, scale);
         }
         
     }   

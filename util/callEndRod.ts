@@ -1,7 +1,7 @@
 import { BLOCK_DATA } from "../lib/blockData/blockData";
 import { EndRod } from "../lib/endRod"
 
-const callEndRod = (id: number, x: number, y: number, z: number) => {
+const callEndRod = (id: number, x: number, y: number, z: number, scale: number) => {
     const endRod = new EndRod(x, y, z);
     const END_ROD = BLOCK_DATA.END_ROD;
 
@@ -12,8 +12,8 @@ const callEndRod = (id: number, x: number, y: number, z: number) => {
             const xEndRodId = returnId(id, 0);
             const xEndRod = endRod.xDir;
 
-            if(xEndRodId === 1) return xEndRod.xMinus();
-            else if(xEndRodId === 2) return xEndRod.xPlus();
+            if(xEndRodId === 1) return xEndRod.xMinus(scale);
+            else if(xEndRodId === 2) return xEndRod.xPlus(scale);
 
             return "";
 
@@ -21,8 +21,8 @@ const callEndRod = (id: number, x: number, y: number, z: number) => {
             const yEndRodId = returnId(id, 0.1);
             const yEndRod = endRod.yDir;
 
-            if(yEndRodId === 1) return yEndRod.yMinus();
-            else if(yEndRodId === 2) return yEndRod.yPlus();
+            if(yEndRodId === 1) return yEndRod.yMinus(scale);
+            else if(yEndRodId === 2) return yEndRod.yPlus(scale);
 
             return "";
 
@@ -30,8 +30,8 @@ const callEndRod = (id: number, x: number, y: number, z: number) => {
             const zEndRodId = returnId(id, 0.2);
             const zEndRod = endRod.zDir;
 
-            if(zEndRodId === 1) return zEndRod.zMinus();
-            else if(zEndRodId === 2) return zEndRod.zPlus();
+            if(zEndRodId === 1) return zEndRod.zMinus(scale);
+            else if(zEndRodId === 2) return zEndRod.zPlus(scale);
 
             return "";
     }
