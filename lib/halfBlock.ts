@@ -93,7 +93,7 @@ class HalfBlock extends Block{
             outer loop
                 vertex  ${Number(`${this.x + 1}.000000e+01`) * scale}  ${Number(`${this.y + 1}.000000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
                 vertex  ${Number(`${this.x + 1}.000000e+01`) * scale}  ${Number(`${this.y}.500000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
-                vertex  ${Number(`${this.x}.000000e+01`) * scale}  ${Number(`${this.y + 1}.000000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}  ${Number(``) * scale}  ${Number(``) * scale}  ${Number(` `) * scale}
+                vertex  ${Number(`${this.x}.000000e+01`) * scale}  ${Number(`${this.y + 1}.000000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
             endloop
         endfacet
         
@@ -188,8 +188,7 @@ class HalfBlock extends Block{
             outer loop
                 vertex  ${Number(`${this.x + 1}.000000e+01`) * scale}  ${Number(`${this.y}.500000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
                 vertex  ${Number(`${this.x + 1}.000000e+01`) * scale}  ${Number(`${this.y}.000000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
-                vertex  ${Number(`${this.x}.000000e+01`) * scale}  ${Number(`${this.y}.500000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}  ${Number(``) * scale}  ${Number(``) * scale}  ${Number(` `) * scale}
-            endloop
+                vertex  ${Number(`${this.x}.000000e+01`) * scale}  ${Number(`${this.y}.500000e+01`) * scale}  ${Number(`${this.z}.000000e+01`) * scale}
         endfacet
         
         `
