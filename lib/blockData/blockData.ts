@@ -32,7 +32,9 @@ const BLOCK_DATA = {
 
     END_ROD: 17.0,
 
-    LIGHTNING_ROD: 18.0
+    LIGHTNING_ROD: 18.0,
+
+    DAYLIGHT_DETECTOR: 19.0
 
 }
 
