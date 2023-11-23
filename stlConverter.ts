@@ -17,6 +17,7 @@ import { callTrapDoor } from "./util/callTrapDoor";
 import { Road } from "./lib/road/road";
 import { callEndRod } from "./util/callEndRod";
 import { callLightningRod } from "./util/callLightningRod";
+import { LightSensor } from "./lib/lightsensor";
 
 /** 配列形式のブロックデータをascii-stlに変換する */
 function stlConvert(structuredata: [[[number]]], scale: number): string {
@@ -102,6 +103,10 @@ function stlConvert(structuredata: [[[number]]], scale: number): string {
 
             case BLOCK_DATA.LIGHTNING_ROD: // 避雷針
               resultStringStl += callLightningRod(z, j, i, k, scale);
+              break;
+
+            case BLOCK_DATA.DAYLIGHT_DETECTOR: // 日照センサ
+              resultStringStl += new LightSensor(j, i, k).lightSensor(scale);
               break;
           }
         }
